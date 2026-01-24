@@ -19,7 +19,7 @@ function HeroSection() {
     const paraRef = useRef(null);
     const buttonRef = useRef(null);
 
-    // TEXT ANIMATION
+    /* ================= TEXT ANIMATION ================= */
     useEffect(() => {
         const tlText = gsap.timeline();
 
@@ -44,7 +44,7 @@ function HeroSection() {
         );
     }, []);
 
-    // IMAGE ANIMATION
+    /* ================= IMAGE ANIMATION ================= */
     useEffect(() => {
         const mm = gsap.matchMedia();
 
@@ -85,8 +85,8 @@ function HeroSection() {
                 );
 
                 tlImg
-                    .to(centerRef.current, { y: -6, duration: 0.25, ease: "power2.out" }, "topMove")
-                    .to(centerRef.current, { y: 0, duration: 0.35, ease: "power2.in" });
+                    .to(centerRef.current, { y: -6, duration: 0.25 }, "topMove")
+                    .to(centerRef.current, { y: 0, duration: 0.35 });
 
                 tlImg.add("bottomMove");
 
@@ -98,8 +98,8 @@ function HeroSection() {
                 );
 
                 tlImg
-                    .to(centerRef.current, { y: -6, duration: 0.25, ease: "power2.out" }, "bottomMove")
-                    .to(centerRef.current, { y: 0, duration: 0.35, ease: "power2.in" });
+                    .to(centerRef.current, { y: -6, duration: 0.25 }, "bottomMove")
+                    .to(centerRef.current, { y: 0, duration: 0.35 });
 
                 tlImg.add("reset");
 
@@ -118,55 +118,65 @@ function HeroSection() {
 
     return (
         <section
-            className=" relative w-full min-h-screen bg-bg px-6 xl:px-30"
+            className="relative w-full min-h-screen bg-bg px-6 xl:px-30 overflow-x-hidden"
             style={{
                 backgroundImage: "url('/background.png')",
-                backgroundRepeat: "no-repeat"
+                backgroundRepeat: "no-repeat",
             }}
         >
-            <div className="max-w-full mx-auto overflow-x-hidden min-h-screen flex flex-col md:flex-row lg:flex-row items-center justify-evenly sm:justify-around lg:justify-between lg:gap-12">
+            <div className="max-w-full mx-auto min-h-screen flex flex-col md:flex-row items-center justify-evenly sm:justify-around lg:justify-between lg:gap-12">
                 {/* LEFT CONTENT */}
-                <div className="w-full lg:w-1/2 text-left sm:mt-5">
+                <div className="w-full lg:w-1/2 text-left sm:mt-5 ">
                     <h1
                         ref={headingRef}
-                        className="lg:font-light lg:italic lg:text-[50px] lg:leading-14"
+                        className="lg:font-light lg:italic lg:text-[50px] lg:leading-14 lg:tracking-[0em]"
                     >
-                        <span className="mr-3 inline-block text-[28px] sm:text-[34px] lg:text-[50px]">
+                        <span className="mr-3 inline-block whitespace-nowrap text-[28px] leading-10 sm:text-[34px] sm:leading-11 lg:text-[50px] lg:leading-14 lg:font-light lg:italic lg:tracking-[0em]">
                             Scalable
                         </span>
-                        <span className="mr-3 inline-block text-[26px] sm:text-[32px]">
+
+                        <span className="mr-3 inline-block whitespace-nowrap text-[26px] sm:text-[32px] lg:font-medium lg:text-[50px] lg:leading-14 lg:tracking-[0em]">
                             by
                         </span>
-                        <span className="mr-3 inline-block text-primary text-[24px] sm:text-[30px] lg:text-[50px]">
+
+                        <span className="mr-3 inline-block whitespace-nowrap text-[24px] sm:text-[30px] lg:font-semibold lg:text-[50px] lg:leading-14 lg:tracking-[0em] text-primary">
                             Design.
                         </span>
+
                         <br />
-                        <span className="mr-3 inline-block text-[24px] sm:text-[30px]">
+
+                        <span className="mr-3 inline-block whitespace-nowrap text-[24px] sm:text-[30px] lg:font-medium lg:text-[45px] lg:leading-14 lg:tracking-[0em]">
                             Digital
                         </span>
-                        <span className="mr-3 inline-block text-[26px] sm:text-[32px]">
+
+                        <span className="mr-3 inline-block whitespace-nowrap text-[26px] sm:text-[32px] lg:font-medium lg:text-[50px] lg:leading-14 lg:tracking-[0em]">
                             by
                         </span>
-                        <span className="mr-3 inline-block italic text-[26px] sm:text-[32px] lg:text-[50px]">
+
+                        <span className="mr-3 inline-block whitespace-nowrap text-[26px] sm:text-[32px] lg:font-medium lg:italic lg:text-[50px] lg:leading-14 lg:tracking-[0em]">
                             Nature.
                         </span>
                     </h1>
 
                     <p
                         ref={paraRef}
-                        className="mt-4 text-sm sm:text-base text-text-secondary lg:w-126"
+                        className="mt-4  text-sm  sm:text-base lg:font-medium lg:text-[14px] lg:leading-7 lg:tracking-[0em] text-text-secondary  lg:mx-0 lg:w-126 sm:w-100  lg:px-0"
                     >
                         We build scalable digital solutions that help businesses move faster
                         and smarter.
                     </p>
 
-                    <div ref={buttonRef} className="mt-6">
+                    <div ref={buttonRef} className="mt-6 flex  justify-start">
                         <GradientButton text="Let’s Build What’s Next" />
                     </div>
                 </div>
 
+
                 {/* RIGHT IMAGES */}
-                <div ref={heroImageRef} className="w-full lg:w-1/2 relative flex justify-center">
+                <div
+                    ref={heroImageRef}
+                    className="w-full lg:w-1/2 relative flex justify-center"
+                >
                     <div ref={topRef} className="absolute inset-0 flex items-center justify-center z-0">
                         <Image src={LaptopTop} alt="" className="w-40 sm:w-50 lg:w-60" />
                     </div>
@@ -175,8 +185,19 @@ function HeroSection() {
                         <Image src={LaptopBottom} alt="" className="w-44 sm:w-50 lg:w-64" />
                     </div>
 
+                    {/* CENTER IMAGE (responsive control without changing classes) */}
                     <div ref={centerRef} className="relative z-10">
-                        <Image src={Laptop} alt="Laptop" className="w-60 sm:w-65 lg:w-116" priority />
+                        <Image
+                            src={Laptop}
+                            alt="Laptop"
+                            className="w-60 sm:w-65 lg:w-116"
+                            priority
+                            sizes="
+                (max-width: 639px) 240px,
+                (max-width: 1023px) 260px,
+                464px
+              "
+                        />
                     </div>
                 </div>
             </div>

@@ -8,6 +8,8 @@ import Men from "@/assets/images/sections/home/whychoose/whychoose-main.png";
 import IconWC1 from "@/assets/images/sections/home/whychoose/icone-wc-1.png";
 import IconWC2 from "@/assets/images/sections/home/whychoose/icone-wc-2.png";
 import IconWC3 from "@/assets/images/sections/home/whychoose/icone-wc-3.png";
+import IconWC4 from "@/assets/images/sections/home/whychoose/icone-wc-4.png";
+import IconWC5 from "@/assets/images/sections/home/whychoose/icone-wc-5.png";
 import MenBg from "@/assets/images/sections/home/whychoose/men-bg.png";
 
 function WhyChooseSection() {
@@ -75,7 +77,7 @@ function WhyChooseSection() {
     }, []);
 
     return (
-        <section data-theme="light" className="bg-bg px-6 xl:px-30 py-25">
+        <section data-theme="light" className="bg-bg px-6 xl:px-30 py-25 overflow-hidden">
             <div className="flex flex-col md:flex-row items-center">
                 {/* LEFT CONTENT */}
                 <div className="w-full xl:w-1/2">
@@ -96,19 +98,19 @@ function WhyChooseSection() {
 
                     <div className="mt-6 space-y-5">
                         {[
-                            [IconWC1, "Startup-First Mindset", "We design with speed and flexibility."],
-                            [IconWC2, "Scalable Architecture", "Built to scale smoothly."],
-                            [IconWC3, "Clean Code", "Readable, future-ready code."],
-                        ].map(([img, title, desc]) => (
-                            <div key={title} className="flex gap-3 items-start">
-                                <div className="w-12 h-12 rounded-full bg-linear-to-b from-[#FB655733] to-[#FE913933] flex">
-                                    <Image src={img} alt={title} className="w-6 h-6 m-auto" />
+                            [IconWC1, "Work on real-world AI & deep-tech projects"],
+                            [IconWC2, "Fast-growing startup culture"],
+                            [IconWC3, "Learning-focused & innovation-driven environment"],
+                            [IconWC4, "Exposure to modern tools & technologies"],
+                            [IconWC5, "Transparent communication & ownership"],
+                        ].map(([img, desc]) => (
+                            <div key={desc} className="flex gap-3 items-center">
+                                <div>
+                                    <Image src={img} alt={desc} className="w-6 h-6 m-0" />
                                 </div>
                                 <div>
-                                    <p className="font-medium text-[14px] text-[#1A1A1F]">
-                                        {title}
-                                    </p>
-                                    <p className="text-[13px] text-[#5f5f6b]">{desc}</p>
+
+                                    <p className="text-[13px] text-[#1A1A1F]">{desc}</p>
                                 </div>
                             </div>
                         ))}

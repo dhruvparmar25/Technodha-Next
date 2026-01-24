@@ -89,7 +89,7 @@ const MarqueeRow = ({ items, reverse = false }) => {
 ================================ */
 function TechStackSection() {
     return (
-        <section data-theme="light" className=" relative bg-bg pb-16 sm:pb-20">
+        <section data-theme="light" className=" relative bg-bg pb-16 sm:pb-20 overflow-x-hidden">
             <div className="left-circle top-1/2 -translate-y-1/2  -left-30"></div>
             <div className="left-circle top-1/2 -translate-y-1/2  -right-30"></div>
 

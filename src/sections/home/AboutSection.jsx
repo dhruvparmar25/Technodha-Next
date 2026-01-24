@@ -69,7 +69,7 @@ function AboutSection() {
                             WE BUILD WITH INTENTION
                         </span>
 
-                        <div className="heading-primary mt-2 text-[24px] sm:text-[28px] xl:text-[32px] leading-9 sm:leading-10 xl:leading-11">
+                        <div className="heading-primary">
                             Designing
                             <span className="font-semibold italic bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent px-1">
                                 digital

@@ -12,6 +12,8 @@ import {
 import { HiMenu, HiX } from "react-icons/hi";
 import Image from "next/image";
 import Logo from "@/assets/images/common/logo.png";
+import Uiux from "@/assets/images/sections/home/services/uiux-icon.png";
+
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -42,7 +44,7 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-bg shadow-md" : "bg-transparent"
+            className={`fixed top-0 w-full z-50 transition-all duration-300  ${scrolled ? "bg-bg shadow-md" : "bg-transparent"
                 }`}
         >
             {/* TOP BAR */}
@@ -105,7 +107,7 @@ const Navbar = () => {
                                     href="/services/ui-ux"
                                     className="dropdown-item flex gap-3 items-center"
                                 >
-                                    <TbAlignBoxTopCenter size={20} /> UI/UX Design
+                                    <Image src={Uiux} alt="" className="w-5 h-5" />UI/UX Design
                                 </Link>
 
                                 <Link

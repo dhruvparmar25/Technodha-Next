@@ -22,6 +22,9 @@
         var(--color-secondary) 100%
     );
 }
+/* * {
+    outline: 1px solid red;
+} */
 
 /* =========================================================
    Light Theme Variables
@@ -66,6 +69,7 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: var(--light-color-bg);
     color: var(--color-text-primary);
+    overflow-x: hidden;
 }
 .text-gradient-primary {
     background: var(--light-gradient-primary);
@@ -150,6 +154,15 @@ body {
     /* word-spacing: 4px; */
 }
 
+.heading-primary-dark {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 44px;
+    letter-spacing: 0.006em;
+    margin-top: 8px;
+    color: white;
+}
 /* Span spacing + highlight */
 .heading-primary span {
     padding-right: 4px;
@@ -281,7 +294,7 @@ body {
     top: 50%;
     left: 50%;
     z-index: 1;
-    opacity: 0;
+    opacity: 0.8;
 
     font-size: 14px;
     font-weight: 600;
