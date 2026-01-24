@@ -28,8 +28,9 @@ function ContactSection() {
         <>
 
             <section className="px-6 xl:px-30 py-20">
-                <div className="left-circle top-1/2 -translate-y-1/2  -left-30"></div>
-                <div className="left-circle top-1/2 -translate-y-1/2  -right-30"></div>
+                <div className="left-circle   -left-30 "></div>
+                <div className="left-circle -right-30 "></div>
+
                 <div className="flex flex-col xl:flex-row gap-18 items-center">
                     {/* LEFT SIDE */}
                     <div>
@@ -101,6 +102,7 @@ function ContactSection() {
                         </div>
                     </div>
                 </div>
+
             </section></>
     );
 }
