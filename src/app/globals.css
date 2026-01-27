@@ -78,19 +78,20 @@ body {
     color: transparent;
 }
 
+.page-wrapper {
+    position: relative;
+    overflow-x: hidden; 
+        width: 100%;
+}
+
+
 .left-circle {
     position: absolute;
     width: 270px;
     height: 270px;
     border-radius: 50%;
-
-    /* gradient background */
     background: var(--light-gradient-primary);
-
-    /* opacity control */
-    opacity: 0.25; 
-
-    /* glow blur */
+    opacity: 0.25;
     filter: blur(120px);
 
     box-shadow:
@@ -99,6 +100,17 @@ body {
 
     pointer-events: none;
 }
+
+
+@media (max-width: 768px) {
+    .left-circle {
+        width: 200px;
+        height: 200px;
+        filter: blur(80px);
+        opacity: 0.18;
+    }
+}
+
 
 /* =========================================================
    Navigation

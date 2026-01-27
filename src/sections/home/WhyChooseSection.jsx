@@ -118,8 +118,8 @@ function WhyChooseSection() {
                 </div>
 
                 {/* RIGHT IMAGE */}
-                <div className="w-full xl:w-1/2 flex justify-center relative">
-                    <div className="left-circle left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="w-full xl:w-1/2 flex justify-center page-wrapper relative">
+    <div className="left-circle left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
                     <div className="relative flex justify-center items-center">
 
