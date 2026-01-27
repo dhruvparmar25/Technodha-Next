@@ -1,0 +1,34 @@
+import GradientButton from "@/components/common/GradientButton";
+
+export default function ProjectCTASection() {
+  return (
+    <section className="px-6 xl:px-32 py-[109px] ">
+
+      <div className="text-center flex flex-col items-center justify-center">
+
+        {/* Small Gradient Title */}
+        <span className="section-title">
+          LET’S BUILD TOGETHER
+        </span>
+
+        {/* Main Heading */}
+        <div className="heading-primary ">
+          Have a{" "}
+          <span className="italic text-gradient-primary">
+            project
+          </span>{" "}
+          in mind?
+        </div>
+
+        {/* Sub Text */}
+        <p className="text-support">
+          Share your requirements—we’ll reply with the next best step, clearly and quickly.
+        </p>
+
+     <GradientButton text="Let’s Build Together" className="mt-[52px]"/>
+
+      </div>
+
+    </section>
+  );
+}
