@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Aboutgif from "@/assets/images/sections/about/company/technodha-gif.gif";
-
+import Eyeicon from "@/assets/images/sections/about/exist/eye-icon.png"
 export default function AboutCompany() {
     return (
         <section

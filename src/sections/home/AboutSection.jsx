@@ -16,7 +16,6 @@ function AboutSection() {
             <div className="w-full max-w-full">
                 <div className="flex flex-col xl:flex-row items-center">
 
-                    {/* SIMPLE IMAGE (MOBILE + TABLET) */}
                     <div className="block xl:hidden w-100 m-auto">
                         <div className="w-100 m-auto rounded-[14px] overflow-hidden">
                             <Image
@@ -28,7 +27,6 @@ function AboutSection() {
                         </div>
                     </div>
 
-                    {/* IMAGE SECTION (DESKTOP ONLY) */}
                     <div
                         className="lifestyle-image w-170 h-137.25 hidden xl:block
             relative
@@ -63,7 +61,6 @@ function AboutSection() {
                         </div>
                     </div>
 
-                    {/* CONTENT SECTION */}
                     <div className="about-contain w-full px-6 py-4 xl:w-1/2 xl:py-20 text-left">
                         <span className="bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent text-sm tracking-wide">
                             WE BUILD WITH INTENTION
