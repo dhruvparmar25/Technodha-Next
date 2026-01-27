@@ -17,7 +17,7 @@ function AboutSection() {
                 <div className="flex flex-col xl:flex-row items-center">
 
                     <div className="block xl:hidden w-100 m-auto">
-                        <div className="w-100 m-auto rounded-[14px] overflow-hidden">
+                        <div className="w-100 m-auto rounded-[14px] ">
                             <Image
                                 src={Aboutimg}
                                 alt="About section visual"
@@ -27,13 +27,19 @@ function AboutSection() {
                         </div>
                     </div>
 
-                    <div
-                        className="lifestyle-image w-170 h-137.25 hidden xl:block
-            relative
-            scale-[0.75] sm:scale-[0.85] xl:scale-100
-            -translate-x-4 sm:translate-x-0 xl:translate-x-0
-            origin-top"
-                    >
+                  <div
+  className="
+    lifestyle-image
+    relative hidden xl:block
+    w-170 h-137.25
+    transform-gpu
+    will-change-transform
+    transition-transform
+    duration-700
+    ease-[cubic-bezier(0.22,1,0.36,1)]
+  "
+>
+
                         <div className="absolute w-70.5 h-87.75 top-31 left-46.75 rounded-[10px] bg-linear-to-b from-[#FB6557] to-[#FE9139] z-1" />
 
                         <div className="absolute w-25 h-25 top-18.5 left-104.75 rounded-[10px] p-0.75 border-3 border-primary z-3 box-one">
@@ -44,19 +50,19 @@ function AboutSection() {
                             <div className="w-full h-full rounded-[7px] bg-transparent" />
                         </div>
 
-                        <div className="absolute top-16 left-10 z-2 rounded-[10px] overflow-hidden image-one">
+                        <div className="absolute top-16 left-10 z-2 rounded-[10px]    image-one">
                             <Image
                                 src={Aboutimgone}
                                 alt="Office collaboration"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-[10px]"
                             />
                         </div>
 
-                        <div className="absolute top-63.75 left-85 z-2 rounded-[10px] overflow-hidden image-two">
+                        <div className="absolute top-63.75 left-85 z-2 rounded-[10px]  image-two">
                             <Image
                                 src={Aboutimgtwo}
                                 alt="Team discussion"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-[10px]"
                             />
                         </div>
                     </div>

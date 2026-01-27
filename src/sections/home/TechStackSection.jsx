@@ -56,7 +56,7 @@ const techItemsSecond = [
 ================================ */
 const MarqueeRow = ({ items, reverse = false }) => {
     return (
-        <div className="relative overflow-hidden w-full">
+        <div className="relative  w-full">
             <div
                 className={`
           flex w-max
@@ -89,7 +89,7 @@ const MarqueeRow = ({ items, reverse = false }) => {
 ================================ */
 function TechStackSection() {
     return (
-        <section data-theme="light" className=" relative bg-bg pb-16 sm:pb-20 page-wrapper overflow-x-hidden">
+        <section data-theme="light" className=" relative bg-bg pb-16 sm:pb-20 page-wrapper ">
      {/* Left glow */}
     <div className="left-circle top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
 

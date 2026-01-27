@@ -118,7 +118,7 @@ function HeroSection() {
 
     return (
         <section
-            className="relative w-full min-h-screen bg-bg px-6 xl:px-30 overflow-x-hidden"
+            className="relative w-full min-h-screen bg-bg px-6 xl:px-30 "
             style={{
                 backgroundImage: "url('/background.png')",
                 backgroundRepeat: "no-repeat",

@@ -140,7 +140,7 @@ const Navbar = () => {
 
             {/* MOBILE MENU */}
             <div
-                className={`lg:hidden bg-[#16161C] overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                className={`lg:hidden bg-[#16161C]  transition-all duration-300 ${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                     }`}
             >
                 <nav className="flex flex-col px-6 py-6 gap-4 text-white">

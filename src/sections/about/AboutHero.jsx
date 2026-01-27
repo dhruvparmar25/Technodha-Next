@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/common/Breadcrumbs";
 
 export default function AboutHero() {
     return (
-        <section className="relative w-full h-83.25 overflow-hidden">
+        <section className="relative w-full h-83.25 ">
             {/* Background Image */}
             <Image
                 src={aboutbg}

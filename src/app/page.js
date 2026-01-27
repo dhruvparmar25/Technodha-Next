@@ -8,7 +8,7 @@ import ServicesSection from "@/sections/home/ServicesSection";
 
 export default function HomePage() {
     return (
-        <main className="overflow-x-hidden">
+        <main>
             <HeroSection />
             <AboutSection />
             <WhyChooseSection />

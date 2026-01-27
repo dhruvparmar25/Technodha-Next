@@ -24,7 +24,7 @@ const cards = [
 
 function AboutExist() {
   return (
-    <section className="px-4 sm:px-6 xl:px-[120px]">
+    <section className="px-4 sm:px-6 xl:px-30">
       <div className="section-title mb-3 text-center md:text-left">
         ABOUT TECHNODHA
       </div>
