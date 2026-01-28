@@ -16,12 +16,12 @@ function AboutSection() {
             <div className="w-full max-w-full">
                 <div className="flex flex-col xl:flex-row items-center">
 
-                    <div className="block xl:hidden w-100 m-auto">
-                        <div className="w-100 m-auto rounded-[14px] overflow-hidden">
+                    <div className="block xl:hidden  m-auto">
+                        <div className=" m-auto rounded-[14px] overflow-hidden">
                             <Image
                                 src={Aboutimg}
                                 alt="About section visual"
-                                className="w-100 h-auto object-cover"
+                                className=" h-auto object-cover"
                                 priority={false}
                             />
                         </div>
