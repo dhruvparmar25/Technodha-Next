@@ -1,4 +1,5 @@
 import CloudHero from "@/sections/services/CloudHero";
+import CloudSolutions from "@/sections/services/CloudSolutions";
 
 export const metadata = {
     title: "CloudComputing | Technodha",
@@ -7,5 +8,6 @@ export const metadata = {
 export default function CloudComputingPage() {
     return <div>
         <CloudHero/>
+        <CloudSolutions/>
     </div>;
 }
