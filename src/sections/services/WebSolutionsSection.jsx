@@ -82,7 +82,7 @@ export default function WebSolutionsSection() {
         min-h-[361px]
         
         px-[20px] sm:px-[25px]
-        flex flex-col items-center justify-between
+        flex flex-col items-center justify-around
         hover:shadow-lg transition
       "
     >
@@ -102,7 +102,7 @@ export default function WebSolutionsSection() {
 
       {/* Text */}
       <div className="text-center max-w-[335px] mb-[35px]">
-        <h4 className="text-[18px] sm:text-[20px] font-medium text-[#1A1A1F] mb-2">
+        <h4 className="text-[18px] sm:text-[20px] font-medium text-[#1A1A1F] -mt-2 mb-2">
           {item.title}
         </h4>
 

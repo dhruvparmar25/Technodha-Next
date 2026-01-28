@@ -25,11 +25,11 @@ function WhyChooseSection() {
 
             tl.to(".word-1", { opacity: 1, x: -120, y: -40, duration: 1 })
                 .to(".men-image", { scale: 1.05, duration: 1 }, "<")
-                .to(".word-2", { opacity: 1, x: -180, y: 20, duration: 1 })
+                .to(".word-2", { opacity: 1, x: -160, y: 20, duration: 1 })
                 .to(".men-image", { scale: 1.08, duration: 1 }, "<")
                 .to(".word-3", { opacity: 1, x: 80, y: -30, duration: 1 })
                 .to(".men-image", { scale: 1.1, duration: 1 }, "<")
-                .to(".word-4", { opacity: 1, x: -190, y: 130, duration: 1 })
+                .to(".word-4", { opacity: 1, x: -180, y: 130, duration: 1 })
                 .to(".men-image", { scale: 1.12, duration: 1 }, "<")
                 .to(".word-5", { opacity: 1, x: 90, y: 130, duration: 1 })
                 .to(".men-image", { scale: 1.15, duration: 1 }, "<")
