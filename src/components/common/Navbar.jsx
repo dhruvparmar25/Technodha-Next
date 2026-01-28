@@ -222,6 +222,17 @@ const Navbar = () => {
                             >
                                 UI / UX Design
                             </Link>
+                            
+                             <Link
+                                    href="/services/cloud-services"
+                                    className="dropdown-item "
+                                      onClick={() => {
+                                    setMenuOpen(false);
+                                    setServicesOpen(false);
+                                }}
+                                >
+                                Cloud Services
+                                </Link>
                         </div>
                     )}
 

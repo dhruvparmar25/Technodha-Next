@@ -1,3 +1,4 @@
+import ContactSection from "@/sections/home/ContactSection";
 import UIUXHero from "@/sections/services/UIUXHero";
 import UIUXSolutions from "@/sections/services/UIUXSolutions";
 
@@ -9,5 +10,6 @@ export default function UiuxDesignPage() {
     return <div>
         <UIUXHero/>
         <UIUXSolutions/>
+        <ContactSection/>
     </div>;
 }
