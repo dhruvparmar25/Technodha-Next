@@ -72,21 +72,23 @@ export default function CollaborationSection() {
       </div>
 
       {/* Right Images */}
-      <div className="w-full lg:w-1/2 relative">
+   {/* Right Images */}
+<div className="w-full lg:w-1/2 relative">
 
-        <Image
-          src={Imageone}
-          className="rounded-2xl object-cover w-[483px] h-[207px] "
-      
-        />
+  <Image
+    src={Imageone}
+    alt="Team members collaborating at a desk"
+    className="rounded-2xl object-cover w-[483px] h-[207px]"
+  />
 
-        <Image
-          src={Imagetwo}
-          className="absolute -bottom-10 -left-10  rounded-xl shadow-lg hidden md:block"
-          cla
-        />
+  <Image
+    src={Imagetwo}
+    alt="Close-up of hands working together on a laptop"
+    className="absolute -bottom-10 -left-10 rounded-xl shadow-lg hidden md:block"
+  />
 
-      </div>
+</div>
+
 
     </section>
   );

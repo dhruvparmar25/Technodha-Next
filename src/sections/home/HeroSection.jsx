@@ -58,16 +58,17 @@ function HeroSection() {
                 const { isMobile, isTablet } = context.conditions;
 
                 const topMove = isMobile
-                    ? { x: 80, y: -120 }
-                    : isTablet
-                        ? { x: 80, y: -130 }
-                        : { x: 180, y: -220 };
+  ? { x: 0, y: -110 }          // straight up
+  : isTablet
+    ? { x: 80, y: -130 }
+    : { x: 180, y: -220 };
 
-                const bottomMove = isMobile
-                    ? { x: -100, y: 60 }
-                    : isTablet
-                        ? { x: -150, y: 70 }
-                        : { x: -255, y: 120 };
+const bottomMove = isMobile
+  ? { x: 0, y: 70 }          // straight down
+  : isTablet
+    ? { x: -150, y: 70 }
+    : { x: -255, y: 120 };
+
 
                 const tlImg = gsap.timeline({
                     repeat: -1,
@@ -182,7 +183,7 @@ function HeroSection() {
                     </div>
 
                     <div ref={bottomRef} className="absolute inset-0 flex items-center justify-center z-0">
-                        <Image src={LaptopBottom} alt="" className="w-44 sm:w-50 lg:w-64" />
+                        <Image src={LaptopBottom} alt="" className="w-40 sm:w-50 lg:w-64" />
                     </div>
 
                     {/* CENTER IMAGE (responsive control without changing classes) */}
@@ -190,7 +191,7 @@ function HeroSection() {
                         <Image
                             src={Laptop}
                             alt="Laptop"
-                            className="w-60 sm:w-65 lg:w-116"
+                            className="w-65 sm:w-65 lg:w-116"
                             priority
                             sizes="
                 (max-width: 639px) 240px,

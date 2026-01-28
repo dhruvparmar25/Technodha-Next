@@ -11,7 +11,6 @@ import {
 } from "react-icons/tb";
 import { HiMenu, HiX } from "react-icons/hi";
 import Image from "next/image";
-import Logo from "@/assets/images/common/logo.png";
 import Uiux from "@/assets/images/sections/home/services/uiux-icon.png";
 
 
@@ -49,14 +48,17 @@ const Navbar = () => {
         >
             {/* TOP BAR */}
             <div className="max-w-full mx-auto px-6 py-4 flex items-center justify-between xl:px-30">
-                <Link href="/">
-                    <Image
-                        src={Logo}
-                        alt="Company Logo"
-                        className="w-11.75 h-10.75 object-contain select-none"
-                        priority
-                    />
-                </Link>
+            <Link href="/">
+  <Image
+    src="/logo.png"
+    alt="Company Logo"
+    width={188}
+    height={43}
+    className="w-11.75 h-10.75 object-contain select-none"
+    priority
+  />
+</Link>
+
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden lg:flex items-center gap-8 text-white">

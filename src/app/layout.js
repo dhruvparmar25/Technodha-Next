@@ -12,9 +12,13 @@ const poppins = Poppins({
 
 // SEO Metadata
 export const metadata = {
-    title: "Technodha",
-    description: "Innovative Technology Solutions by Technodha",
+  title: "Technodha",
+  description: "Innovative Technology Solutions by Technodha",
+  icons: {
+    icon: "/logo.png",
+  },
 };
+
 
 export default function RootLayout({ children }) {
     return (
