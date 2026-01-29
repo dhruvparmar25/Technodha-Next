@@ -1,5 +1,5 @@
 export default function ContactHeader() {
-    return <div className="contact-header-section px-6 py-16 xl:px-30">
+    return <div className="contact-header-section p-6 xl:py-16 xl:px-30">
         <div className="text-center">
 
   <span className="section-title">
