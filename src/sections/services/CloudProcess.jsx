@@ -25,7 +25,7 @@ export default function CloudProcess() {
       }
       description="Cloud isn’t just hosting—it’s the foundation that keeps your product secure, scalable, and stable as usage grows."
       items={items}
-      reverse={false}
+      reverse={true}
     />
   );
 }

@@ -1,0 +1,83 @@
+import Image from "next/image";
+
+import Timeline from "@/assets/images/sections/services/mobile-icon.png";
+import Chat from "@/assets/images/sections/services/apple-icon.png";
+import Deploy from "@/assets/images/sections/services/mobile-code.png";
+
+const expectations = [
+  {
+    title: "Android Development",
+    desc: "Apps built for a wide range of devices with stable performance, clean navigation, and scalable architecture.",
+    icon: Timeline,
+  },
+  {
+    title: "iOS Development",
+    desc: "Polished iOS experiences designed for speed, smooth interactions, and consistency across Apple devices.",
+    icon: Chat,
+  },
+  {
+    title: "Cross-Platform Development",
+    desc: "One build for both Android and iOS—faster launch, consistent design, and easier long-term maintenance.",
+    icon: Deploy,
+  },
+];
+
+export default function MobilePlatform() {
+  return (
+    <section className="px-6 xl:px-30 py-20 bg-[#FFF7F2]">
+
+      {/* Header */}
+      <div className="text-center max-w-[720px] mx-auto">
+        <div className="section-title mb-2">
+          PLATFORMS WE BUILD FOR
+        </div>
+
+        <div className="heading-primary">
+          <span className="italic text-(--light-color-primary)">Android</span>-ready,{" "}
+          <span className="italic text-(--light-color-secondary)">iOS</span>-polished
+        </div>
+
+        <p className="text-support mt-3">
+          We develop mobile apps with smooth performance, consistent UI, and
+          production-ready quality—across the platforms your users rely on.
+        </p>
+      </div>
+
+      {/* Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+
+        {expectations.map((item, index) => (
+          <div
+            key={index}
+            className="
+              bg-white rounded-xl border border-[#FFD8C7]
+              px-6 py-6
+              flex flex-col
+              min-h-[170px]
+            "
+          >
+            {/* Icon */}
+            <Image
+              src={item.icon}
+              alt=""
+              width={32}
+              height={32}
+              className="mb-3"
+            />
+
+            {/* Title */}
+            <h4 className="text-[15px] font-medium text-[#1A1A1F] mb-2">
+              {item.title}
+            </h4>
+
+            {/* Desc */}
+            <p className="text-[13px] text-[#5F5F6B] leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+
+      </div>
+    </section>
+  );
+}
