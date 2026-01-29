@@ -28,7 +28,7 @@ export default function MobileProcess() {
       }
       description="We focus on performance, scalability, and user experience—so your app feels smooth today and stays strong as it grows."
       items={items}
-      reverse={false}
+      reverse={true}
     />
   );
 }

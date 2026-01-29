@@ -33,7 +33,7 @@ export default function CommonProcessSection({
           {/* Items */}
           <div className="space-y-4 mt-6">
             {items.map((item, index) => (
-              <div key={index} className="flex gap-4 items-start">
+              <div key={index} className="flex gap-4 items-center">
 
                 {/* LEFT SIDE: NUMBER OR ICON */}
                 {item.id ? (
@@ -44,8 +44,8 @@ export default function CommonProcessSection({
                   <Image
                     src={item.icon}
                     alt=""
-                    width={20}
-                    height={20}
+                    width={24}
+                    height={24}
                     className="mt-1 shrink-0"
                   />
                 ) : null}
