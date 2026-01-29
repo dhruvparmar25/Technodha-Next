@@ -1,8 +1,5 @@
-
-
-
 export default function ContactHeader() {
-    return <div className="contact-header-section px-6 xl:px-30">
+    return <div className="contact-header-section px-6 py-16 xl:px-30">
         <div className="text-center">
 
   <span className="section-title">
@@ -11,7 +8,7 @@ START HERE  </span>
   <div className="heading-primary ">
     Have a <span className="italic text-(--light-color-primary)">Requirement</span>?
     We’re
-    <span className="italic text-(--light-color-secondary)">Listening</span>!
+    <span className="italic text-(--light-color-secondary) mx-2">Listening</span>!
   </div>
 
   <p className="text-support ">

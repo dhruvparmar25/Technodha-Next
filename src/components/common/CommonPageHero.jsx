@@ -7,7 +7,7 @@ export default function CommonPageHero({
   highlight,
 }) {
   return (
-    <section className="relative w-full h-[330px]">
+    <section className="relative w-full h-82.5">
 
       {/* Background */}
       <Image
@@ -15,7 +15,7 @@ export default function CommonPageHero({
         alt=""
         fill
         priority
-        className="object-cover"
+        className="object-cove"
         style={{ opacity: 0.93 }}
       />
 

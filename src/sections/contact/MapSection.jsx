@@ -1,12 +1,12 @@
 export default function MapSection() {
   return ( 
-    <section className=" py-12 px-6 xl:px-30 " >
+    <section className=" py-16 px-6 xl:px-30 " >
 
-      <div className="w-full h-[280px] md:h-[340px] overflow-hidden">
+      <div className="w-full h-70 md:h-85 overflow-hidden">
 
         <iframe
           src="https://www.google.com/maps?q=Surat,Gujarat&output=embed"
-          className="w-full h-full border-0 rounded-[12px]"
+          className="w-full h-full border-0 rounded-xl"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />

@@ -144,6 +144,7 @@ body {
     font-style: normal;         
     font-size: 12px;
     color: #FE9139;
+    margin-bottom: 8px;
 }
 
 .heading-primary {
@@ -471,3 +472,18 @@ body {
           color: #0000;
     -webkit-text-stroke: 1.5px var(--light-color-primary);
 }
+
+/* about animation */
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.animate-icon-pulse {
+  animation: iconPulse 4s ease-in-out infinite;
+}
+

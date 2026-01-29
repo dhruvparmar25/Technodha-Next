@@ -3,7 +3,7 @@ import Illustration from "@/assets/images/sections/contact/contact-cta.png";
 
 export default function ContactCTASection() {
   return (
-    <section className="bg-[#FFF7F2]">
+    <section >
       <CommonProcessSection
         illustration={Illustration}
         eyebrow="LET’S CONNECT"

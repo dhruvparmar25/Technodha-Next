@@ -9,7 +9,7 @@ export default function CommonProcessSection({
   reverse = false,
 }) {
   return (
-    <section className="px-6 xl:px-30 py-6 xl:py-30">
+    <section className="px-6 xl:px-30 py-16">
       <div className={`grid lg:grid-cols-2 gap-[54px] items-center`}>
 
         {/* Illustration */}
@@ -17,7 +17,6 @@ export default function CommonProcessSection({
           <Image
             src={illustration}
             alt=""
-            className="w-full max-w-[520px]"
             priority
           />
         </div>

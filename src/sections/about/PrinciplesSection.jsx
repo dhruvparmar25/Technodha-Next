@@ -1,4 +1,4 @@
-const principles = [
+const PRINCIPLES = [
   {
     id: "01",
     title: "Clarity over complexity",
@@ -23,44 +23,45 @@ const principles = [
 
 export default function PrinciplesSection() {
   return (
-    <section className="">
-      <div className="min-h-129.5 flex flex-col  px-6 md:px-30">
+    <section className="px-6 py-16 md:px-30">
+      <div className="flex flex-col">
+        {/* ================= HEADER ================= */}
+        <header>
+          <div className="section-title">WHAT WE STAND FOR</div>
 
-        {/* Title */}
-        <div className="">
-          <div className="section-title">
-            WHAT WE STAND FOR
-          </div>
-
-          <div className="heading-primary">
+          <h2 className="heading-primary">
             <span className="italic text-(--light-color-primary)">Principles</span>{" "}
-            we don't <span className="italic text-(--light-color-text-secondary)">compromise</span> on
-          </div>
-        </div>
+            we don&apos;t{" "}
+            <span className="italic text-(--light-color-text-secondary)">
+              compromise
+            </span>{" "}
+            on
+          </h2>
+        </header>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-19.5  gap-6">
-
-          {principles.map((item) => (
-            <div
+        {/* ================= PRINCIPLES GRID ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-19.5 gap-6">
+          {PRINCIPLES.map((item) => (
+            <article
               key={item.id}
-              className="relative bg-[#FB6557]/20 p-5 pt-17.25  rounded-xl  "
+              className="relative bg-[#FB6557]/20 p-5 pt-17.25 rounded-xl"
             >
-              {/* Number */}
-              <span className=" digit absolute  -top-5 right-4 text-5xl font-bold  opacity-70">
+              {/* Principle Number */}
+              <span className="digit absolute -top-5 right-4 text-5xl font-bold opacity-70 animate-icon-pulse">
                 {item.id}
               </span>
 
-              <h3 className="text-gradient-primary text-[18px] font-medium ">
+              {/* Title */}
+              <h3 className="text-gradient-primary text-[18px] font-medium">
                 {item.title}
               </h3>
 
-              <p className=" text-(--light-color-text-secondary) text-[14px] mt-2 ">
+              {/* Description */}
+              <p className="text-(--light-color-text-secondary) text-[14px] mt-2">
                 {item.desc}
               </p>
-            </div>
+            </article>
           ))}
-
         </div>
       </div>
     </section>
