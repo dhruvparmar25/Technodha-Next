@@ -15,7 +15,7 @@ export default function CommonPageHero({
         alt=""
         fill
         priority
-        className="object-cove"
+        className="object-cove bg-cover"
         style={{ opacity: 0.93 }}
       />
 

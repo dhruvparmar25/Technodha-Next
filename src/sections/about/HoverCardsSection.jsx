@@ -73,7 +73,7 @@ export default function HoverCardsSection() {
             {cards.map((item, i) => (
               <div
                 key={i}
-            className={`hidden lg:flex absolute ${item.pos} max-w-[524px] max-h-[80px]
+            className={`hidden lg:flex absolute ${item.pos} max-w-131 max-h-20
 rounded-xl p-2.5
 opacity-0 scale-90 translate-y-4
 transition-all duration-500
@@ -128,7 +128,9 @@ pointer-events-none items-start gap-4`}
             </div>
 
             {/* Center Image */}
-            <div className="relative z-10 w-[300px] lg:h-[388px] sm:w-[380px] flex items-end m-auto">
+            <div className="relative z-10 w-75 lg:h-97 sm:w-95 flex items-end m-auto">
+<div className="left-circle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
               <Image
                 src={Person}
                 alt=""

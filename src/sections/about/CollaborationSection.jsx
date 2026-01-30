@@ -7,10 +7,10 @@ import { useRef, useState } from "react";
 import Arcticons from "@/assets/images/sections/about/collaboration/arcticons-icon.png";
 import Communication from "@/assets/images/sections/about/collaboration/communication-icon.png";
 import Handshake from "@/assets/images/sections/about/collaboration/handshake-icon.png";
-import ImageOne from "@/assets/images/sections/about/collaboration/image-one.png";
-import ImageTwo from "@/assets/images/sections/about/collaboration/image-two.png";
+import ImageOne from "@/assets/images/sections/about/collaboration/image-one.jpg";
+import ImageTwo from "@/assets/images/sections/about/collaboration/image-two.jpg";
 import ImageOneAlt from "@/assets/images/sections/about/collaboration/image-one-alt.jpg";
-import ImageTwoAlt from "@/assets/images/sections/about/collaboration/image-two-alt.jpg";
+import ImageTwoAlt from "@/assets/images/sections/about/collaboration/image-two-alt.png";
 
 /* -------------------------------------------------------------------------- */
 
@@ -95,8 +95,18 @@ export default function CollaborationSection() {
         </div>
       </div>
 
-      {/* RIGHT */}
-      <div className="w-full lg:w-1/2 relative overflow-hidden h-64 md:h-72">
+      {/* MOBILE + TABLET STATIC IMAGE */}
+      <div className="w-full md:hidden flex justify-center">
+        <Image
+          src={ImageOne}
+          alt=""
+          className="rounded-2xl object-cover w-full h-56"
+        />
+      </div>
+
+      {/* DESKTOP ANIMATED BLOCK */}
+      <div className="hidden md:flex w-full lg:w-1/2 relative overflow-hidden h-auto md:h-72 flex-col">
+
         {/* BIG IMAGE */}
         <motion.div
           style={{ x }}
@@ -110,7 +120,7 @@ export default function CollaborationSection() {
             ease: [0.4, 0, 0.2, 1],
             times: [0, 0.5, 1],
           }}
-          className="relative md:absolute md:top-0 md:right-0 w-full flex items-center justify-center"
+          className="relative w-full flex justify-center md:absolute md:top-0 md:right-0"
         >
           <motion.div
             className="relative w-full md:w-auto"
@@ -123,9 +133,8 @@ export default function CollaborationSection() {
             >
               <Image
                 src={ImageOne}
-                alt="Team collaborating in workspace"
-                className="rounded-2xl object-cover w-full md:w-120 h-52"
-                sizes="100vw"
+                alt=""
+                className="rounded-2xl object-cover w-full h-56 md:w-120 md:h-52"
               />
             </motion.div>
 
@@ -136,9 +145,8 @@ export default function CollaborationSection() {
             >
               <Image
                 src={ImageOneAlt}
-                alt="Alternate collaboration scene"
-                className="rounded-2xl object-cover w-full md:w-120 h-52"
-                sizes="100vw"
+                alt=""
+                className="rounded-2xl object-cover w-full h-56 md:w-120 md:h-52"
               />
             </motion.div>
           </motion.div>
@@ -153,7 +161,7 @@ export default function CollaborationSection() {
             ease: [0.4, 0, 0.2, 1],
             times: [0, 0.5, 1],
           }}
-          className="absolute bottom-0 left-0 hidden md:block"
+          className="absolute bottom-0 left-0"
         >
           <motion.div
             className="relative"
@@ -166,9 +174,8 @@ export default function CollaborationSection() {
             >
               <Image
                 src={ImageTwo}
-                alt="Team discussion"
+                alt=""
                 className="rounded-xl shadow-lg w-64"
-                sizes="256px"
               />
             </motion.div>
 
@@ -179,9 +186,8 @@ export default function CollaborationSection() {
             >
               <Image
                 src={ImageTwoAlt}
-                alt="Alternate team discussion"
+                alt=""
                 className="rounded-xl shadow-lg w-64"
-                sizes="256px"
               />
             </motion.div>
           </motion.div>
