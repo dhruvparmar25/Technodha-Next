@@ -146,7 +146,7 @@ export default function CollaborationSection() {
 
         {/* SMALL IMAGE (DESKTOP ONLY) */}
         <motion.div
-          animate={{ x: [0, 300, 0], y: [0, -75, 0] }}
+          animate={{ x: [0, 300, 0], y: [0, -95, 0] }}
           transition={{
             duration: ANIMATION_DURATION,
             repeat: Infinity,

@@ -3,6 +3,7 @@ import AboutExist from "@/sections/about/AboutExist";
 import AboutHero from "@/sections/about/AboutHero";
 import CollaborationSection from "@/sections/about/CollaborationSection";
 import ExpectationsSection from "@/sections/about/ExpectationsSection";
+import HoverCardsSection from "@/sections/about/HoverCardsSection";
 import PrinciplesSection from "@/sections/about/PrinciplesSection";
 import ProjectCTASection from "@/sections/about/ProjectCTASection";
 
@@ -14,6 +15,7 @@ export default function AboutPage() {
     return <div>
         <AboutHero />
         <AboutCompany />
+        <HoverCardsSection/>
         <AboutExist/>
         <PrinciplesSection/>
         <CollaborationSection/>
