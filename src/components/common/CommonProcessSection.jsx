@@ -10,7 +10,7 @@ export default function CommonProcessSection({
 }) {
   return (
     <section className="px-6 xl:px-30 py-16">
-      <div className={`grid lg:grid-cols-2 gap-[54px] items-center`}>
+      <div className={`grid lg:grid-cols-2 gap-13.5 items-center`}>
 
         {/* Illustration */}
         <div className={`flex justify-center ${reverse ? "lg:order-2" : ""}`}>

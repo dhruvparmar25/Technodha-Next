@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useMotionValue, useMotionValueEvent } from "framer-motion";
+import { useRef, useState } from "react";
 
 import Arcticons from "@/assets/images/sections/about/collaboration/arcticons-icon.png";
 import Communication from "@/assets/images/sections/about/collaboration/communication-icon.png";
@@ -11,6 +11,10 @@ import ImageOne from "@/assets/images/sections/about/collaboration/image-one.png
 import ImageTwo from "@/assets/images/sections/about/collaboration/image-two.png";
 import ImageOneAlt from "@/assets/images/sections/about/collaboration/image-one-alt.jpg";
 import ImageTwoAlt from "@/assets/images/sections/about/collaboration/image-two-alt.jpg";
+
+/* -------------------------------------------------------------------------- */
+/*                                    DATA                                    */
+/* -------------------------------------------------------------------------- */
 
 const features = [
   {
@@ -30,20 +34,50 @@ const features = [
   },
 ];
 
+/* -------------------------------------------------------------------------- */
+/*                                 CONSTANTS                                  */
+/* -------------------------------------------------------------------------- */
+
+const ANIMATION_DURATION = 16;
+const SWAP_THRESHOLD = -40;
+const SWAP_DELAY = 400;
+const PULSE_DURATION = 1400;
+
+/* -------------------------------------------------------------------------- */
+
 export default function CollaborationSection() {
   const [swap, setSwap] = useState(false);
+  const [centerPulse, setCenterPulse] = useState(false);
 
-  // swap images every loop middle
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSwap((prev) => !prev);
-    }, 4000); // must match animation duration
+  // Framer Motion values (no React re-render on every frame)
+  const x = useMotionValue(0);
+  const lastX = useRef(0);
 
-    return () => clearInterval(interval);
-  }, []);
+  const triggerPulse = () => {
+    setCenterPulse(true);
+    setTimeout(() => setCenterPulse(false), PULSE_DURATION);
+  };
+
+  useMotionValueEvent(x, "change", (currentX) => {
+    const prevX = lastX.current;
+
+    // Moving left
+    if (prevX > currentX && currentX < SWAP_THRESHOLD && !swap) {
+      triggerPulse();
+      setTimeout(() => setSwap(true), SWAP_DELAY);
+    }
+
+    // Moving right
+    if (prevX < currentX && currentX > SWAP_THRESHOLD && swap) {
+      triggerPulse();
+      setTimeout(() => setSwap(false), SWAP_DELAY);
+    }
+
+    lastX.current = currentX;
+  });
 
   return (
-    <section className="min-h-[383px] px-6 xl:px-30 py-[44px] gap-10 flex flex-col md:flex-row items-center md:items-start overflow-hidden">
+    <section className="min-h-96 px-6 xl:px-30 py-12 gap-10 flex flex-col md:flex-row items-center md:items-start overflow-hidden">
       {/* LEFT */}
       <div className="w-full lg:w-1/2">
         <div className="section-title">HOW WE COLLABORATE</div>
@@ -55,62 +89,102 @@ export default function CollaborationSection() {
         </div>
 
         <div className="mt-8">
-          {features.map((item, index) => (
-            <div key={index} className="flex gap-4 items-start mt-6">
+          {features.map((item) => (
+            <div key={item.title} className="flex gap-2 items-start mt-6">
               <Image src={item.icon} alt={item.title} width={24} height={24} />
 
               <div>
-                <h4 className="text-[14px] font-medium text-[#1A1A1F]">
+                <h4 className="text-sm font-medium text-[#1A1A1F]">
                   {item.title}
                 </h4>
-                <p className="text-[13px] text-[#5F5F6B]">{item.desc}</p>
+                <p className="text-xs text-[#5F5F6B]">{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* RIGHT (animated) */}
-      <div className="w-full lg:w-1/2 relative overflow-hidden h-[260px]">
-
+      {/* RIGHT */}
+      <div className="w-full lg:w-1/2 relative overflow-hidden h-64">
         {/* BIG IMAGE */}
         <motion.div
-          animate={{
-            top: ["0%", "40%", "0%"],
-            right: ["0%", "40%", "0%"],
-          }}
+          style={{ x }}
+          animate={{ x: [0, -95, 0], y: [0, 50, 0] }}
           transition={{
-            duration: 4,
+            duration: ANIMATION_DURATION,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.4, 0, 0.2, 1],
+            times: [0, 0.5, 1],
           }}
-          className="absolute"
+          className="absolute top-0 right-0"
         >
-          <Image
-            src={swap ? ImageOneAlt : ImageOne}
-            alt=""
-            className="rounded-2xl object-cover w-[483px] h-[207px]"
-          />
+          <motion.div
+            className="relative"
+            animate={{ opacity: centerPulse ? 0.6 : 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.div animate={{ opacity: swap ? 0 : 1 }} transition={{ duration: 0.8 }}>
+              <Image
+                src={ImageOne}
+                alt="Team collaborating in workspace"
+                className="rounded-2xl object-cover w-120 h-52"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+
+            <motion.div
+              className="absolute inset-0"
+              animate={{ opacity: swap ? 1 : 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Image
+                src={ImageOneAlt}
+                alt="Alternate collaboration scene"
+                className="rounded-2xl object-cover w-120 h-52"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+          </motion.div>
         </motion.div>
 
         {/* SMALL IMAGE */}
         <motion.div
-          animate={{
-            bottom: ["0%", "40%", "0%"],
-            left: ["0%", "40%", "0%"],
-          }}
+          animate={{ x: [0, 300, 0], y: [0, -75, 0] }}
           transition={{
-            duration: 4,
+            duration: ANIMATION_DURATION,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.4, 0, 0.2, 1],
+            times: [0, 0.5, 1],
           }}
-          className="absolute hidden md:block"
+          className="absolute bottom-0 left-0 hidden md:block"
         >
-          <Image
-            src={swap ? ImageTwoAlt : ImageTwo}
-            alt=""
-            className="rounded-xl shadow-lg w-[260px]"
-          />
+          <motion.div
+            className="relative"
+            animate={{ opacity: centerPulse ? 0.6 : 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.div animate={{ opacity: swap ? 0 : 1 }} transition={{ duration: 0.8 }}>
+              <Image
+                src={ImageTwo}
+                alt="Team discussion"
+                className="rounded-xl shadow-lg w-64"
+                sizes="(max-width: 768px) 100vw, 256px"
+              />
+            </motion.div>
+
+            <motion.div
+              className="absolute inset-0"
+              animate={{ opacity: swap ? 1 : 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Image
+                src={ImageTwoAlt}
+                alt="Alternate team discussion"
+                className="rounded-xl shadow-lg w-64"
+                sizes="(max-width: 768px) 100vw, 256px"
+              />
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
