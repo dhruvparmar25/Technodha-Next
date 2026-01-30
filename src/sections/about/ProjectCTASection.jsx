@@ -2,7 +2,7 @@ import GradientButton from "@/components/common/GradientButton";
 
 export default function ProjectCTASection() {
   return (
-    <section className="px-6 xl:px-32 py-[109px] ">
+    <section className="px-6 xl:px-30 py-16 ">
 
       <div className="text-center flex flex-col items-center justify-center">
 
@@ -25,7 +25,7 @@ export default function ProjectCTASection() {
           Share your requirements—we’ll reply with the next best step, clearly and quickly.
         </p>
 
-     <GradientButton text="Let’s Build Together" className="mt-[52px]"/>
+     <GradientButton text="Let’s Build Together" className="mt-13"/>
 
       </div>
 

@@ -13,8 +13,6 @@ import ImageOneAlt from "@/assets/images/sections/about/collaboration/image-one-
 import ImageTwoAlt from "@/assets/images/sections/about/collaboration/image-two-alt.jpg";
 
 /* -------------------------------------------------------------------------- */
-/*                                    DATA                                    */
-/* -------------------------------------------------------------------------- */
 
 const features = [
   {
@@ -34,10 +32,6 @@ const features = [
   },
 ];
 
-/* -------------------------------------------------------------------------- */
-/*                                 CONSTANTS                                  */
-/* -------------------------------------------------------------------------- */
-
 const ANIMATION_DURATION = 16;
 const SWAP_THRESHOLD = -40;
 const SWAP_DELAY = 400;
@@ -49,7 +43,6 @@ export default function CollaborationSection() {
   const [swap, setSwap] = useState(false);
   const [centerPulse, setCenterPulse] = useState(false);
 
-  // Framer Motion values (no React re-render on every frame)
   const x = useMotionValue(0);
   const lastX = useRef(0);
 
@@ -61,13 +54,11 @@ export default function CollaborationSection() {
   useMotionValueEvent(x, "change", (currentX) => {
     const prevX = lastX.current;
 
-    // Moving left
     if (prevX > currentX && currentX < SWAP_THRESHOLD && !swap) {
       triggerPulse();
       setTimeout(() => setSwap(true), SWAP_DELAY);
     }
 
-    // Moving right
     if (prevX < currentX && currentX > SWAP_THRESHOLD && swap) {
       triggerPulse();
       setTimeout(() => setSwap(false), SWAP_DELAY);
@@ -77,7 +68,7 @@ export default function CollaborationSection() {
   });
 
   return (
-    <section className="min-h-96 px-6 xl:px-30 py-12 gap-10 flex flex-col md:flex-row items-center md:items-start overflow-hidden">
+    <section className="min-h-96 px-6 xl:px-30 py-16 gap-10 flex flex-col md:flex-row items-center md:items-start overflow-hidden">
       {/* LEFT */}
       <div className="w-full lg:w-1/2">
         <div className="section-title">HOW WE COLLABORATE</div>
@@ -105,30 +96,36 @@ export default function CollaborationSection() {
       </div>
 
       {/* RIGHT */}
-      <div className="w-full lg:w-1/2 relative overflow-hidden h-64">
+      <div className="w-full lg:w-1/2 relative overflow-hidden h-64 md:h-72">
         {/* BIG IMAGE */}
         <motion.div
           style={{ x }}
-          animate={{ x: [0, -95, 0], y: [0, 50, 0] }}
+          animate={{
+            x: [0, -95, 0],
+            y: [0, 50, 0],
+          }}
           transition={{
             duration: ANIMATION_DURATION,
             repeat: Infinity,
             ease: [0.4, 0, 0.2, 1],
             times: [0, 0.5, 1],
           }}
-          className="absolute top-0 right-0"
+          className="relative md:absolute md:top-0 md:right-0 w-full flex items-center justify-center"
         >
           <motion.div
-            className="relative"
+            className="relative w-full md:w-auto"
             animate={{ opacity: centerPulse ? 0.6 : 1 }}
             transition={{ duration: 0.7 }}
           >
-            <motion.div animate={{ opacity: swap ? 0 : 1 }} transition={{ duration: 0.8 }}>
+            <motion.div
+              animate={{ opacity: swap ? 0 : 1 }}
+              transition={{ duration: 0.8 }}
+            >
               <Image
                 src={ImageOne}
                 alt="Team collaborating in workspace"
-                className="rounded-2xl object-cover w-120 h-52"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="rounded-2xl object-cover w-full md:w-120 h-52"
+                sizes="100vw"
               />
             </motion.div>
 
@@ -140,14 +137,14 @@ export default function CollaborationSection() {
               <Image
                 src={ImageOneAlt}
                 alt="Alternate collaboration scene"
-                className="rounded-2xl object-cover w-120 h-52"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="rounded-2xl object-cover w-full md:w-120 h-52"
+                sizes="100vw"
               />
             </motion.div>
           </motion.div>
         </motion.div>
 
-        {/* SMALL IMAGE */}
+        {/* SMALL IMAGE (DESKTOP ONLY) */}
         <motion.div
           animate={{ x: [0, 300, 0], y: [0, -75, 0] }}
           transition={{
@@ -163,12 +160,15 @@ export default function CollaborationSection() {
             animate={{ opacity: centerPulse ? 0.6 : 1 }}
             transition={{ duration: 0.7 }}
           >
-            <motion.div animate={{ opacity: swap ? 0 : 1 }} transition={{ duration: 0.8 }}>
+            <motion.div
+              animate={{ opacity: swap ? 0 : 1 }}
+              transition={{ duration: 0.8 }}
+            >
               <Image
                 src={ImageTwo}
                 alt="Team discussion"
                 className="rounded-xl shadow-lg w-64"
-                sizes="(max-width: 768px) 100vw, 256px"
+                sizes="256px"
               />
             </motion.div>
 
@@ -181,7 +181,7 @@ export default function CollaborationSection() {
                 src={ImageTwoAlt}
                 alt="Alternate team discussion"
                 className="rounded-xl shadow-lg w-64"
-                sizes="(max-width: 768px) 100vw, 256px"
+                sizes="256px"
               />
             </motion.div>
           </motion.div>
