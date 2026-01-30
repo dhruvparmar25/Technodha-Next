@@ -1,4 +1,5 @@
 import CommonHeroSection from "@/components/common/CommonHeroSection";
+import HeroBg from "@/assets/images/sections/services/web-bg.jpg";
 
 // Assets
 import HeroIllustration from "@/assets/images/sections/services/web-hero.png";
@@ -7,6 +8,7 @@ export default function WebDevelopmentHero() {
   return (
     <CommonHeroSection
       theme="light"
+      herobg={HeroBg}
       illustration={HeroIllustration}
       sectionTitle="WEB DEVELOPMENT"
       heading={

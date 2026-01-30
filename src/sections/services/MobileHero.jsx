@@ -1,4 +1,5 @@
 import CommonHeroSection from "@/components/common/CommonHeroSection";
+import HeroBg from "@/assets/images/sections/services/mobile-bg.png";
 
 // Assets
 import MobileIllustration from "@/assets/images/sections/services/mobile-hero.png";
@@ -7,6 +8,8 @@ export default function MobileHero() {
   return (
     <CommonHeroSection
       theme="light"
+            herobg={HeroBg}
+      
       illustration={MobileIllustration}
       sectionTitle="MOBILE APP DEVELOPMENT"
       heading={

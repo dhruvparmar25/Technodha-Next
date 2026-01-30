@@ -1,11 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import GradientButton from "@/components/common/GradientButton";
-import HeroBg from "@/assets/images/sections/services/web-bg.jpg";
-
+import { motion } from "framer-motion";
 
 export default function CommonHeroSection({
   theme = "light",
-
+  herobg,
   illustration,
   sectionTitle,
   heading,
@@ -15,30 +16,26 @@ export default function CommonHeroSection({
   return (
     <section
       data-theme={theme}
-      className="relative overflow-hidden bg-black"
+      className="relative overflow-hidden bg-black py-16"
     >
-      
-        <Image
-          src={HeroBg}
-          alt=""
-          fill
-          priority
-          className="object-cover opacity-20"
-        />
-      
+      <Image
+        src={herobg}
+        alt=""
+        fill
+        priority
+        className="object-cover opacity-40"
+      />
 
       {/* Overlay */}
       <div className="absolute inset-0" />
 
       <div className="relative px-6 xl:px-30">
-        <div className="grid lg:grid-cols-2 gap-12 items-center py-[134px]">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT */}
           <div>
             {sectionTitle && (
-              <div className="section-title">
-                {sectionTitle}
-              </div>
+              <div className="section-title">{sectionTitle}</div>
             )}
 
             {heading}
@@ -56,15 +53,27 @@ export default function CommonHeroSection({
 
           {/* RIGHT */}
           {illustration && (
-            <div className="flex justify-center lg:justify-end">
+            <motion.div
+              className="flex justify-center lg:justify-end"
+              animate={{
+                scale: [0.65, 1, 0.65],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                times: [0, 0.15, 1],
+                ease: ["easeOut", "linear"],
+              }}
+            >
               <Image
                 src={illustration}
                 alt="Hero illustration"
                 priority
-                className="w-[260px] sm:w-[320px] lg:w-[420px]"
+                className="w-65 sm:w-[320px] lg:w-105"
               />
-            </div>
+            </motion.div>
           )}
+
         </div>
       </div>
     </section>
