@@ -10,21 +10,22 @@ export default function CommonPageHero({
     <section className="relative w-full h-82.5">
 
       {/* Background */}
-      <Image
-        src={bgImage}
-        alt=""
-        fill
-        priority
-        className="object-cove bg-cover"
-        style={{ opacity: 0.93 }}
-      />
+      {bgImage && (
+        <Image
+          src={bgImage}
+          alt=""
+          fill
+          priority
+          className="object-cover bg-cover"
+          style={{ opacity: 0.93 }}
+        />
+      )}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
-
         <h1 className="font-poppins font-medium text-[48px] mb-4 leading-none">
           {title}{" "}
           {highlight && (

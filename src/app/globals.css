@@ -486,4 +486,17 @@ body {
 .animate-icon-pulse {
   animation: iconPulse 4s ease-in-out infinite;
 }
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.auto-zoom {
+  animation: zoomInOut 4s ease-in-out infinite;
+}
 

@@ -12,14 +12,21 @@ export default function CommonProcessSection({
     <section className="px-6 xl:px-30 py-16">
       <div className={`grid lg:grid-cols-2 gap-13.5 items-center`}>
 
-        {/* Illustration */}
-        <div className={`flex justify-center ${reverse ? "lg:order-2" : ""}`}>
-          <Image
-            src={illustration}
-            alt=""
-            priority
-          />
-        </div>
+     {/* Illustration */}
+<div
+  className={`p-5 flex justify-center overflow-hidden 
+  transition-transform duration-300 ease-out hover:scale-120
+  ${reverse ? "lg:order-2" : ""}`}
+>
+  <Image
+    src={illustration}
+    alt=""
+    className="max-w-[460px] max-h-[410px]"
+    priority
+  />
+</div>
+
+
 
         {/* Content */}
         <div className={`${reverse ? "lg:order-1" : ""}`}>

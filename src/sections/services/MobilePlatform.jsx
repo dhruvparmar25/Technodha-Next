@@ -24,10 +24,10 @@ const expectations = [
 
 export default function MobilePlatform() {
   return (
-    <section className="px-6 xl:px-30 py-20 bg-[#FFF7F2]">
+    <section className="px-6 xl:px-30 py-16 ">
 
       {/* Header */}
-      <div className="text-center max-w-[720px] mx-auto">
+      <div className="text-center max-w-180 mx-auto">
         <div className="section-title mb-2">
           PLATFORMS WE BUILD FOR
         </div>
@@ -43,41 +43,42 @@ export default function MobilePlatform() {
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
 
-        {expectations.map((item, index) => (
-          <div
-            key={index}
-            className="
-              bg-white rounded-xl border border-[#FFD8C7]
-              px-6 py-6
-              flex flex-col
-              min-h-[170px]
-            "
-          >
-            {/* Icon */}
-            <Image
-              src={item.icon}
-              alt=""
-              width={32}
-              height={32}
-              className="mb-3"
-            />
+  {expectations.map((item, index) => (
+    <div
+      key={index}
+      className="group
+        bg-white rounded-xl border border-(--light-color-border)
+        p-4 pt-5.5 flex flex-col 
+        transition-all duration-300
+hover:shadow-[0_0_0_1px_rgba(254,145,57,0.25),0_0_20px_rgba(254,145,57,0.35)]
+      "
+    >
+      {/* Icon */}
+      <Image
+        src={item.icon}
+        alt=""
+        width={32}
+        height={32}
+        className="mb-3"
+      />
 
-            {/* Title */}
-            <h4 className="text-[15px] font-medium text-[#1A1A1F] mb-2">
-              {item.title}
-            </h4>
+      {/* Title */}
+      <h4 className="text-sm font-medium text-[#1A1A1F] mb-2 transition-colors duration-300 group-hover:text-(--light-color-primary)">
+        {item.title}
+      </h4>
 
-            {/* Desc */}
-            <p className="text-[13px] text-[#5F5F6B] leading-relaxed">
-              {item.desc}
-            </p>
-          </div>
-        ))}
+      {/* Desc */}
+      <p className="text-sm text-[#5F5F6B] leading-relaxed">
+        {item.desc}
+      </p>
+    </div>
+  ))}
 
-      </div>
+</div>
+
+
     </section>
   );
 }
