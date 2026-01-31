@@ -9,22 +9,31 @@ export default function CommonTechSection({
   reverse = false,
 }) {
   return (
-    <section className="px-6 xl:px-30 py-16">
+    <section className="px-6 xl:px-30 py-6 lg:py-16">
       <div className={`grid lg:grid-cols-2 gap-16 items-center`}>
         {/* Illustration */}
-        <div
-          className={`p-5 flex justify-center overflow-hidden
+     {/* Illustration */}
+<div
+  className={`p-5 flex justify-center overflow-hidden
   animate-[pulseScale_4s_ease-in-out_infinite]
   transform-gpu will-change-transform
   ${reverse ? "lg:order-2" : ""}`}
-        >
-          <Image
-            src={illustration}
-            alt=""
-            className="max-w-115 max-h-102.5"
-            priority
-          />
-        </div>
+>
+  <Image
+    src={illustration}
+    alt=""
+    priority
+    className="
+      w-[220px]
+      sm:w-[280px]
+      md:w-[340px]
+      lg:w-[400px]
+      xl:w-[460px]
+      h-auto
+    "
+  />
+</div>
+
 
         {/* Content */}
         <div className={`${reverse ? "lg:order-1" : ""}`}>
