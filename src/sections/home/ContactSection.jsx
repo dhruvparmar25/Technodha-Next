@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import GradientButton from "@/components/common/GradientButton";
 import { CiLocationOn } from "react-icons/ci";
@@ -24,6 +25,40 @@ const contactInfo = [
 ];
 
 function ContactSection() {
+    const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+    const [status, setStatus] = useState({ type: null, text: "" });
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({ ...prev, [name]: value }));
+        setStatus({ type: null, text: "" });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus({ type: null, text: "" });
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                setStatus({ type: "error", text: data.error || "Something went wrong." });
+                return;
+            }
+            setStatus({ type: "success", text: "Message sent! We'll get back to you soon." });
+            setForm({ name: "", email: "", phone: "", message: "" });
+        } catch (err) {
+            setStatus({ type: "error", text: "Failed to send. Please try again." });
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <>
 
@@ -54,33 +89,59 @@ function ContactSection() {
                         </p>
 
                         {/* FORM */}
-                        <form className="flex flex-col gap-4 mt-10">
+                        <form className="flex flex-col gap-4 mt-10" onSubmit={handleSubmit}>
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Name"
+                                value={form.name}
+                                onChange={handleChange}
+                                required
                                 className="w-full lg:w-146.25 h-11 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
                             />
 
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Email"
+                                value={form.email}
+                                onChange={handleChange}
+                                required
                                 className="w-full lg:w-146.25 h-11 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
                             />
 
                             <input
                                 type="tel"
+                                name="phone"
                                 placeholder="Phone number"
+                                value={form.phone}
+                                onChange={handleChange}
                                 className="w-full lg:w-146.25 h-11 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 outline-none focus:ring-2 focus:ring-orange-300"
                             />
 
                             <textarea
+                                name="message"
                                 placeholder="Message"
+                                value={form.message}
+                                onChange={handleChange}
                                 className="w-full lg:w-146.25 h-38.5 rounded-xl border border-(--light-color-border) bg-white text-black px-5 py-3 resize-none outline-none focus:ring-2 focus:ring-orange-300"
                             />
 
+                            {status.text && (
+                                <p
+                                    className={`text-sm ${
+                                        status.type === "success" ? "text-green-600" : "text-red-600"
+                                    }`}
+                                >
+                                    {status.text}
+                                </p>
+                            )}
+
                             <GradientButton
-                                text="Send Message"
+                                type="submit"
+                                text={loading ? "Sending…" : "Send Message"}
                                 className="w-full lg:w-146.25 px-5 py-3"
+                                disabled={loading}
                             />
                         </form>
                     </div>
