@@ -500,3 +500,11 @@ body {
   animation: zoomInOut 4s ease-in-out infinite;
 }
 
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

@@ -1,9 +1,9 @@
-import CommonProcessSection from "@/components/common/CommonProcessSection";
 import Illustration from "@/assets/images/sections/services/cloud-tech.png";
+import CommonTechSection from "@/components/common/CommonTechSection";
 
 export default function CloudTech() {
   return (
-    <CommonProcessSection
+    <CommonTechSection
       illustration={Illustration}
       eyebrow="TECH STACK"
       heading={

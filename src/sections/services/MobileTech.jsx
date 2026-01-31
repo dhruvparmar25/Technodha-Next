@@ -1,10 +1,10 @@
-import CommonProcessSection from "@/components/common/CommonProcessSection";
 import Illustration from "@/assets/images/sections/services/web-tech.png";
+import CommonTechSection from "@/components/common/CommonTechSection";
 
 
 export default function MobileTech() {
   return (
-    <CommonProcessSection
+    <CommonTechSection
       illustration={Illustration}
       eyebrow="TECH STACK WE USE"
       heading={

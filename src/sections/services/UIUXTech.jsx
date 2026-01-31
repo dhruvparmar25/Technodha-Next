@@ -1,9 +1,9 @@
-import CommonProcessSection from "@/components/common/CommonProcessSection";
 import Illustration from "@/assets/images/sections/services/uiux-tech.png";
+import CommonTechSection from "@/components/common/CommonTechSection";
 
 export default function UIUXTools() {
   return (
-    <CommonProcessSection
+    <CommonTechSection
       illustration={Illustration}
       eyebrow="TOOLS WE DESIGN WITH"
       heading={
