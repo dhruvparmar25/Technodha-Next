@@ -2,11 +2,14 @@ import CommonHeroSection from "@/components/common/CommonHeroSection";
 
 // Assets
 import CloudIllustration from "@/assets/images/sections/services/cloud-hero.png";
+import Cloudbg from "@/assets/images/sections/services/cloud-bg.jpg";
+
 
 export default function CloudHero() {
   return (
     <CommonHeroSection
       theme="light"
+      herobg={Cloudbg}
       illustration={CloudIllustration}
       sectionTitle="CLOUD COMPUTING"
       heading={

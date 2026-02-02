@@ -54,7 +54,7 @@ export default function CommonHeroSection({
           {/* RIGHT */}
           {illustration && (
             <motion.div
-              className="flex justify-center lg:justify-end"
+              className="flex justify-center lg:justify-between"
               animate={{
                 scale: [0.65, 1, 0.65],
               }}
