@@ -2,12 +2,14 @@ import CommonHeroSection from "@/components/common/CommonHeroSection";
 
 // Assets
 import UIUXIllustration from "@/assets/images/sections/services/uiux-hero.png";
+import Uiuxbg from "@/assets/images/sections/services/uiux-bg.jpg";
 
 export default function UIUXHero() {
   return (
     <CommonHeroSection
       theme="light"
       illustration={UIUXIllustration}
+      herobg={Uiuxbg}
       sectionTitle="UI / UX DESIGN"
       heading={
         <h1 className="heading-primary-dark text-[32px]!">
