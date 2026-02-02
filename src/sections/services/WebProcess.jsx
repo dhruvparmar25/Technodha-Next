@@ -16,8 +16,8 @@ export default function WebProcess() {
       eyebrow="HOW WE BUILD"
       heading={
         <div className="heading-primary">
-          How <span className="italic text-(--light-color-secondary)">web development</span>{" "}
-          works with <span className="italic text-(--light-color-primary)">us</span>
+          How<span className="italic text-(--light-color-secondary)">web development</span>
+          works with<span className="italic text-(--light-color-primary)">us</span>
         </div>
       }
       description="A clear, engineering-focused workflow."

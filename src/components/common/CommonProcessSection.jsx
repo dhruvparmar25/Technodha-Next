@@ -21,7 +21,7 @@ export default function CommonProcessSection({
   <Image
     src={illustration}
     alt=""
-    className="xlmax-w-[460px] max-h-[410px]"
+    className="xlmax-w-[460px] max-h-102.5"
     priority
   />
 </div>
@@ -52,7 +52,6 @@ export default function CommonProcessSection({
                     alt=""
                     width={24}
                     height={24}
-                    className="mt-1 shrink-0"
                   />
                 ) : null}
 

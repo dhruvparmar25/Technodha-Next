@@ -61,7 +61,7 @@ function AboutSection() {
                         </div>
                     </div>
 
-                    <div className="about-contain w-full px-6 py-4 xl:w-1/2 xl:py-20 text-left">
+                    <div className="about-contain w-full px-6 py-4 xl:w-1/2 xl:py-16 text-left">
                         <span className="bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent text-sm tracking-wide">
                             WE BUILD WITH INTENTION
                         </span>
