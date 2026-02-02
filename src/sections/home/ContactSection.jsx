@@ -6,6 +6,7 @@ import GradientButton from "@/components/common/GradientButton";
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegMessage } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
+import { post } from "@/lib/api";
 import ContactUs from "@/assets/images/sections/home/contact/contact-gif.gif";
 
 // ✅ Static data (safe outside component)
@@ -40,20 +41,16 @@ function ContactSection() {
         setLoading(true);
         setStatus({ type: null, text: "" });
         try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+            await post("/contact", {
+                name: form.name,
+                email: form.email,
+                mobile: form.phone,
+                message: form.message,
             });
-            const data = await res.json();
-            if (!res.ok) {
-                setStatus({ type: "error", text: data.error || "Something went wrong." });
-                return;
-            }
             setStatus({ type: "success", text: "Message sent! We'll get back to you soon." });
             setForm({ name: "", email: "", phone: "", message: "" });
         } catch (err) {
-            setStatus({ type: "error", text: "Failed to send. Please try again." });
+            setStatus({ type: "error", text: err.message || "Failed to send. Please try again." });
         } finally {
             setLoading(false);
         }
