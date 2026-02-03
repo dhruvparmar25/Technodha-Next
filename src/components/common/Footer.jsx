@@ -22,7 +22,7 @@ const serviceLinks = [
 ];
 
 const FooterHeading = ({ children }) => (
-    <h4 className="relative text-white text-[14px] mb-4 pb-2 inline-block">
+    <h4 className="relative text-white text-[14px] mb-4 pb-2 inline-">
         {children}
         <span className="absolute left-0 bottom-0 h-px w-8.25 bg-(--light-color-secondary)"></span>
     </h4>
@@ -32,7 +32,7 @@ const Footer = () => {
     return (
         <footer className="bg-bg text-text-secondary text-[13px]">
             {/* Top Section */}
-            <div className="px-6 xl:px-30 py-15 grid gap-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+            <div className=" max-w-[1230px] px-[15px] m-auto py-15 grid gap-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                 {/* Logo */}
                 <div>
                     <Image
@@ -51,7 +51,7 @@ const Footer = () => {
                             <li key={link.id}>
                                 <Link
                                     href={link.path}
-                                    className="block transition-colors duration-200 hover:text-(--light-color-secondary)"
+                                    className=" transition-colors duration-200 hover:text-(--light-color-secondary)"
                                 >
                                     {link.name}
                                 </Link>
@@ -68,7 +68,7 @@ const Footer = () => {
                             <li key={link.id}>
                                 <Link
                                     href={link.path}
-                                    className="block transition-colors duration-200 hover:text-(--light-color-secondary)"
+                                    className=" transition-colors duration-200 hover:text-(--light-color-secondary)"
                                 >
                                     {link.name}
                                 </Link>
