@@ -1,34 +1,22 @@
-/* =========================================================
-   Imports
-========================================================= */
+
 @import "tailwindcss";
 
-/* =========================================================
-   Dark Theme Variables (Default)
-========================================================= */
+
 @theme {
-    --color-primary: #fb6557;
-    --color-secondary: #fe9139;
+    --color-primary: #fb6557; 
+    --color-secondary: #fe9139; 
+    --color-bg: #0f0f12; 
+    --color-border: #2a2a33; 
 
-    --color-bg: #0f0f12;
-    --color-border: #2a2a33;
-
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #b3b3bd;
-
+    --color-text-primary: #ffffff; 
+    --color-text-secondary: #b3b3bd; 
     --gradient-primary: linear-gradient(
         90deg,
         var(--color-primary) 0%,
         var(--color-secondary) 100%
     );
 }
-/*  {
-    outline: 1px solid red;
-} */
 
-/* =========================================================
-   Light Theme Variables
-========================================================= */
 :root {
     --light-color-primary: #fb6557;
     --light-color-secondary: #fe9139;
@@ -46,9 +34,6 @@
     );
 }
 
-/* =========================================================
-   Light Theme Overrides
-========================================================= */
 [data-theme="light"] {
     --color-primary: var(--light-color-primary);
     --color-secondary: var(--light-color-secondary);
@@ -66,11 +51,13 @@
    Base Styles
 ========================================================= */
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; 
     background-color: var(--light-color-bg);
-    color: var(--color-text-primary);
-    overflow-x: hidden;
+    color: var(--color-text-primary); 
+    overflow-x: hidden; 
 }
+
+/* Gradient text utility */
 .text-gradient-primary {
     background: var(--light-gradient-primary);
     -webkit-background-clip: text;
@@ -78,15 +65,26 @@ body {
     color: transparent;
 }
 
+/* Main wrapper */
 .page-wrapper {
     position: relative;
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
+/* Decorative blurred circle */
+.left-circle {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: var(--light-gradient-primary);
+    opacity: 0.25;
+    filter: blur(120px);
+    box-shadow: 0 0 120px rgba(254, 145, 57, 0.25), 0 0 200px rgba(251, 101, 87, 0.2);
+    pointer-events: none;
+}
 
-.left-circle { position: absolute; width: 270px; height: 270px; border-radius: 50%; background: var(--light-gradient-primary); opacity: 0.25; filter: blur(120px); box-shadow: 0 0 120px rgba(254, 145, 57, 0.25), 0 0 200px rgba(251, 101, 87, 0.2); pointer-events: none; }
-
-
+/* Smaller circle on mobile */
 @media (max-width: 768px) {
     .left-circle {
         width: 200px;
@@ -96,19 +94,22 @@ body {
     }
 }
 
-
 /* =========================================================
    Navigation
 ========================================================= */
+
+/* Navbar links */
 .nav-link {
     @apply relative text-white transition-all duration-300;
 }
 
+/* Hover + active color */
 .nav-link:hover,
 .nav-link.active {
     @apply text-[#FB6557];
 }
 
+/* Bottom underline for active link */
 .nav-link.active::after {
     content: "";
     @apply absolute left-0 -bottom-1 w-full h-0.5 bg-[#FB6557];
@@ -117,6 +118,8 @@ body {
 /* =========================================================
    Dropdown
 ========================================================= */
+
+/* Dropdown menu items */
 .dropdown-item {
     @apply py-2.5 px-1 text-sm text-white rounded-lg
          transition-all duration-200
@@ -129,6 +132,8 @@ body {
 /* =========================================================
    Typography Utilities
 ========================================================= */
+
+/* Small uppercase label */
 .eyebrow-text {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -139,14 +144,17 @@ body {
     text-align: center;
     display: inline-block;
 }
+
+/* Section small title */
 .section-title {
-    font-weight: 500;          
-    font-style: normal;         
+    font-weight: 500;
+    font-style: normal;
     font-size: 12px;
     color: #FE9139;
     margin-bottom: 8px;
 }
 
+/* Main heading (light) */
 .heading-primary {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -155,9 +163,9 @@ body {
     letter-spacing: 0.006em;
     margin-top: 8px;
     color: #1a1a1f;
-    /* word-spacing: 4px; */
 }
 
+/* Main heading (dark) */
 .heading-primary-dark {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -167,7 +175,8 @@ body {
     margin-top: 8px;
     color: white;
 }
-/* Span spacing + highlight */
+
+/* Span spacing inside heading */
 .heading-primary span {
     padding-right: 4px;
     margin-right: 4px;
@@ -175,16 +184,19 @@ body {
     white-space: nowrap;
 }
 
+/* Primary highlighted word */
 .highlight-primary {
     font-style: italic;
     color: #fb6557;
 }
 
+/* Secondary highlighted word */
 .highlight-secondary {
     font-style: italic;
     color: #fe9139;
 }
 
+/* Paragraph/support text */
 .text-support {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -194,6 +206,8 @@ body {
     margin-top: 16px;
     color: #5f5f6b;
 }
+
+/* Responsive heading sizes */
 @media (min-width: 640px) {
     .heading-primary {
         font-size: 26px;
@@ -207,9 +221,12 @@ body {
         line-height: 44px;
     }
 }
+
 /* =========================================================
    Buttons
 ========================================================= */
+
+/* Gradient text on hover */
 .btn-focus:hover {
     border-color: transparent;
     background: var(--light-gradient-primary);
@@ -221,137 +238,100 @@ body {
 /* =========================================================
    Zoom Animations
 ========================================================= */
-/* IMAGE 1 */
+
+/* First image animation */
 .image-one {
     animation: imageOneSwap 6s ease-in-out infinite alternate;
 }
 
-/* IMAGE 2 */
+/* Second image animation */
 .image-two {
     animation: imageTwoSwap 6s ease-in-out infinite alternate;
 }
 
+/* Image size swap animation */
 @keyframes imageOneSwap {
-    from {
-        width: 262px;
-        height: 270px;
-    }
-    to {
-        width: 280px;
-        height: 243px;
-    }
+    from { width: 262px; height: 270px; }
+    to   { width: 280px; height: 243px; }
 }
 
 @keyframes imageTwoSwap {
-    from {
-        width: 280px;
-        height: 243px;
-    }
-    to {
-        width: 262px;
-        height: 270px;
-    }
+    from { width: 280px; height: 243px; }
+    to   { width: 262px; height: 270px; }
 }
 
-/* BOX ONE: 69 → 100 */
+/* Small box grows */
 .box-one {
     animation: boxOneSwap 6s ease-in-out infinite alternate;
     width: 69px;
     height: 69px;
 }
 
-/* BOX TWO: 100 → 69 */
+/* Big box shrinks */
 .box-two {
     animation: boxTwoSwap 6s ease-in-out infinite alternate;
     width: 100px;
     height: 100px;
 }
 
+/* Box animations */
 @keyframes boxOneSwap {
-    from {
-        width: 69px;
-        height: 69px;
-    }
-    to {
-        width: 100px;
-        height: 100px;
-    }
+    from { width: 69px; height: 69px; }
+    to   { width: 100px; height: 100px; }
 }
 
 @keyframes boxTwoSwap {
-    from {
-        width: 100px;
-        height: 100px;
-    }
-    to {
-        width: 69px;
-        height: 69px;
-    }
+    from { width: 100px; height: 100px; }
+    to   { width: 69px; height: 69px; }
 }
 
 /* =========================================================
    Hero / Text Effects
 ========================================================= */
-/* MOBILE + LAPTOP */
+
+/* Floating word text */
 .word {
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 1;
     opacity: 0.8;
-
     font-size: 14px;
     font-weight: 600;
     color: var(--light-color-secondary);
-    -webkit-text-stroke: 0;
 }
+
+/* Tablet outline text */
 @media (min-width: 640px) and (max-width: 1023px) {
     .word {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;
         opacity: 0;
-
-        font-size: 18px; /* 👈 thoda chhota */
+        font-size: 18px;
         font-weight: 700;
         text-transform: capitalize;
-
         color: transparent;
         -webkit-text-stroke: 1.5px var(--light-color-secondary);
     }
 }
-/* LAPTOP (1024px – 1279px) */
+
+/* Laptop outline text */
 @media (min-width: 1024px) and (max-width: 1279px) {
     .word {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;
         opacity: 0;
-
-        font-size: 26px; /* 👈 thoda chhota */
+        font-size: 26px;
         font-weight: 700;
         text-transform: capitalize;
-
         color: transparent;
         -webkit-text-stroke: 1.5px var(--light-color-secondary);
     }
 }
 
-/* DESKTOP ONLY (XL ≥1280px) */
+/* Desktop outline text */
 @media (min-width: 1280px) {
     .word {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;
         opacity: 0;
-
         font-size: 42px;
         font-weight: 700;
         text-transform: capitalize;
-
         color: transparent;
         -webkit-text-stroke: 2px var(--light-color-secondary);
     }
@@ -360,6 +340,8 @@ body {
 /* =========================================================
    Image Layers
 ========================================================= */
+
+/* Keep main image above others */
 .men-image {
     position: relative;
     z-index: 10;
@@ -368,19 +350,13 @@ body {
 /* =========================================================
    Shape Animation
 ========================================================= */
+
+/* Animated border radius */
 @keyframes threeCornerRotate {
-    0% {
-        border-radius: 100px 0 0 100px;
-    }
-    33% {
-        border-radius: 100px 100px 0 0;
-    }
-    66% {
-        border-radius: 0 100px 0 100px;
-    }
-    100% {
-        border-radius: 100px 0 0 100px;
-    }
+    0% { border-radius: 100px 0 0 100px; }
+    33% { border-radius: 100px 100px 0 0; }
+    66% { border-radius: 0 100px 0 100px; }
+    100% { border-radius: 100px 0 0 100px; }
 }
 
 .animate-three-corner {
@@ -390,142 +366,96 @@ body {
 /* =========================================================
    Tech Stack Boxes
 ========================================================= */
+
+/* Tech item box */
 .tech-box {
     width: 160px;
     height: 48px;
-    flex-shrink: 0;
-
     background-color: #ffffff;
     border-radius: 12px;
-
     font-size: 13px;
     font-weight: 500;
     color: #1a1a1f;
 }
 
-@media (min-width: 640px) {
-    .tech-box {
-        width: 190px;
-        height: 56px;
-        font-size: 14px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .tech-box {
-        width: 220px;
-        height: 60px;
-        font-size: 15px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .tech-box {
-        width: 240px;
-        height: 64px;
-        font-size: 16px;
-    }
-}
+/* Bigger on larger screens */
+@media (min-width: 640px) { .tech-box { width: 190px; height: 56px; font-size: 14px; } }
+@media (min-width: 1024px) { .tech-box { width: 220px; height: 60px; font-size: 15px; } }
+@media (min-width: 1280px) { .tech-box { width: 240px; height: 64px; font-size: 16px; } }
 
 /* =========================================================
    Marquee Animations
 ========================================================= */
+
+/* Left scrolling */
 @keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
+/* Right scrolling */
 @keyframes marquee-reverse {
-    from {
-        transform: translateX(-50%);
-    }
-    to {
-        transform: translateX(0);
-    }
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
 }
 
-.animate-marquee {
-    animation: marquee 60s linear infinite;
-}
+.animate-marquee { animation: marquee 60s linear infinite; }
+.animate-marquee-reverse { animation: marquee-reverse 60s linear infinite; }
 
-.animate-marquee-reverse {
-    animation: marquee-reverse 60s linear infinite;
-}
+/* Scale loop */
 @keyframes scaleLoop {
-    0%,
-    100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.35);
-    }
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.35); }
 }
 
 .animate-scale {
     animation: scaleLoop 5.5s ease-in-out infinite;
 }
-.digit{
-          color: #0000;
+
+/* Outline digit */
+.digit {
+    color: #0000;
     -webkit-text-stroke: 1.5px var(--light-color-primary);
 }
 
-/* about animation */
+/* Icon pulse animation */
 @keyframes iconPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.5); }
 }
 
 .animate-icon-pulse {
   animation: iconPulse 4s ease-in-out infinite;
 }
-@keyframes zoomInOut {
-  0%, 100% {
-    transform: scale(1);
-  }
 
-  50% {
-    transform: scale(1.1);
-  }
+/* Auto zoom */
+@keyframes zoomInOut {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .auto-zoom {
   animation: zoomInOut 4s ease-in-out infinite;
 }
 
+/* Extra pulse effects */
 @keyframes pulseScale {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-}
-@keyframes centerPulse {
-  0%, 100% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1);
-  }
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
-/* Corner cards opposite of center */
-@keyframes cornerFade {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+@keyframes centerPulse {
+  0%,100% { transform: scale(0.9); }
+  50% { transform: scale(1); }
 }
+
+/* Fade for corner cards */
+@keyframes cornerFade {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Align career content right */
 .career-right-align {
   justify-content: end;
 }

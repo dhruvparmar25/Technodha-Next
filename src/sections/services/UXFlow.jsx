@@ -9,14 +9,15 @@ import Card3 from "@/assets/images/sections/services/ux3.png";
 import Card4 from "@/assets/images/sections/services/ux4.png";
 import Card5 from "@/assets/images/sections/services/ux5.png";
 
-const cards = [
-  { title: "UX Research", img: Card1 },
-  { title: "Brainstorming", img: Card2 },
-  { title: "Quick Wireframing", img: Card3 },
-  { title: "UI Design", img: Card4 },
-  { title: "Testing & Iteration", img: Card5 },
-];
 
+const cards = [
+  { title: "Quick Wireframing", img: Card3 },
+  { title: "Testing & Iteration", img: Card5 },
+    { title: "UI Design", img: Card4 },
+
+  { title: "Brainstorming", img: Card2 },
+
+{ title: "UX Research", img: Card1 }];
 export default function Home() {
   const cardsRef = useRef([]);
   const [isDesktop, setIsDesktop] = useState(false);
