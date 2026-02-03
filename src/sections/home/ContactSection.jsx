@@ -59,7 +59,7 @@ function ContactSection() {
     return (
         <>
 
-            <section className="px-6 xl:px-30 py-16 page-wrapper">
+            <section className=" max-w-[1230px] px-[15px] m-auto py-16 page-wrapper">
                {/* Left glow */}
     <div className="left-circle top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
 

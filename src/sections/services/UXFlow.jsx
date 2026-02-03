@@ -63,7 +63,7 @@ export default function Home() {
   }, [isDesktop]);
 
   return (
-    <section className="px-6 xl:px-30 py-6 lg:py-16">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-6 lg:py-16">
       <header className="text-center">
         <div className="section-title">DESIGN WORKFLOW</div>
 

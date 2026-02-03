@@ -29,7 +29,7 @@ export default function CommonHeroSection({
       {/* Overlay */}
       <div className="absolute inset-0" />
 
-      <div className="relative px-6 xl:px-30">
+      <div className="relative max-w-[1230px] px-[15px] m-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center mt-8">
 
           {/* LEFT */}

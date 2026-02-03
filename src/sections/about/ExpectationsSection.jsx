@@ -24,7 +24,7 @@ const expectations = [
 
 export default function ExpectationsSection() {
   return (
-    <section className="px-6 xl:px-30 py-16">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-16">
       {/* Header */}
       <div>
         <div className="section-title">WHAT YOU CAN EXPECT</div>

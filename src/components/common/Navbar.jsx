@@ -47,7 +47,7 @@ const Navbar = () => {
                 }`}
         >
             {/* TOP BAR */}
-            <div className="max-w-full mx-auto px-6 py-4 flex items-center justify-between xl:px-30">
+            <div className="mx-auto  py-4 flex items-center justify-between  max-w-[1230px] px-[15px] m-auto">
             <Link href="/">
   <Image
     src="/logo.png"

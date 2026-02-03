@@ -42,7 +42,7 @@ const workflowSteps = [
 
 function WorkflowSection() {
   return (
-    <section className="px-6 xl:px-30 py-20">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-20">
       {/* HEADER */}
       <div className="text-center mb-16">
         <span className="bg-linear-to-r from-[#FB6557] to-[#FE9139] bg-clip-text text-transparent text-sm font-medium">

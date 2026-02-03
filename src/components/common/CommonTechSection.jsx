@@ -9,7 +9,7 @@ export default function CommonTechSection({
   reverse = false,
 }) {
   return (
-    <section className="px-6 xl:px-30 py-6 lg:py-16">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-6 lg:py-16">
       <div className={`grid lg:grid-cols-2 gap-16 items-center`}>
         {/* Illustration */}
      {/* Illustration */}

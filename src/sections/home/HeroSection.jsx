@@ -119,13 +119,13 @@ const bottomMove = isMobile
 
     return (
         <section
-            className="relative w-full min-h-screen bg-bg px-6 xl:px-30 "
+            className="relative w-full min-h-screen bg-bg  "
             style={{
                 backgroundImage: "url('/background.png')",
                 backgroundRepeat: "no-repeat",
             }}
         >
-            <div className="max-w-full mx-auto min-h-screen flex flex-col md:flex-row items-center justify-evenly sm:justify-around lg:justify-between lg:gap-12">
+            <div className="max-w-[1220px] px-[15px] m-auto min-h-screen flex flex-col md:flex-row items-center justify-evenly sm:justify-around lg:justify-between lg:gap-12">
                 {/* LEFT CONTENT */}
                 <div className="w-full lg:w-1/2 text-left sm:mt-5 ">
                     <h1

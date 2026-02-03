@@ -2,7 +2,7 @@ import GradientButton from "@/components/common/GradientButton";
 
 export default function ProjectCTASection() {
   return (
-    <section className="px-6 xl:px-30 pb-16 ">
+    <section className=" max-w-[1230px] px-[15px] m-auto pb-16 ">
 
       <div className="text-center flex flex-col items-center justify-center">
 

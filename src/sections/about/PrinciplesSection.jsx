@@ -23,7 +23,7 @@ const PRINCIPLES = [
 
 export default function PrinciplesSection() {
   return (
-    <section className="px-6 py-16 md:px-30">
+    <section className=" py-16 max-w-[1230px] px-[15px] m-auto">
       <div className="flex flex-col">
         {/* ================= HEADER ================= */}
         <header>

@@ -68,7 +68,7 @@ const services = [
 
 function ServicesSection() {
     return (
-        <section data-theme="light" className="bg-bg px-6 xl:px-30">
+        <section data-theme="light" className="bg-bg  max-w-[1230px] px-[15px] m-auto">
             {/* HEADER */}
             <div className="text-center lg:text-left">
                 <span className="bg-[linear-gradient(90deg,#FB6557_0%,#FE9139_100%)] bg-clip-text text-transparent text-sm font-medium">

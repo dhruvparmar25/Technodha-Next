@@ -26,7 +26,7 @@ const EXIST_CARDS = [
 
 export default function AboutExist() {
   return (
-    <section className="py-16 px-6 xl:px-30">
+    <section className="py-16  max-w-[1230px] px-[15px] m-auto">
       {/* ================= HEADER ================= */}
       <header className="text-center md:text-left">
         <div className="section-title">WHY WE EXIST</div>

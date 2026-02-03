@@ -11,7 +11,7 @@
     return (
       <section
         className="
-        py-16 px-6 xl:px-30
+        py-16  max-w-[1230px] px-[15px] m-auto
           flex flex-col gap-8
           lg:flex-row lg:gap-16.25
           justify-between items-center

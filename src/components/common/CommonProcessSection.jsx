@@ -12,7 +12,7 @@ export default function CommonProcessSection({
   reverse = true,
 }) {
   return (
-    <section className="px-6 xl:px-30 p-6 lg:py-16">
+    <section className=" max-w-[1230px] px-[15px] m-auto lg:py-16">
       <div className={`grid lg:grid-cols-2 gap-13.5 items-center`}>
 
      {/* Illustration */}

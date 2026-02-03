@@ -18,7 +18,7 @@ export default function CloudPlatform() {
   ];
 
   return (
-    <section className="px-6 xl:px-30 py-20 bg-[#FFF7F2]">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-20 bg-[#FFF7F2]">
 
       {/* Header */}
       <div className="text-center max-w-[720px] mx-auto">

@@ -80,7 +80,7 @@ export default function CareerApplicationSection() {
   };
 
   return (
-    <section className=" px-6 xl:px-30 py-16 flex flex-col lg:flex-row">
+    <section className=" max-w-[1230px] px-[15px] m-auto py-16 flex flex-col lg:flex-row">
       {/* Left – red-orange branding */}
 <div
   className="w-full lg:w-[485px] flex flex-col justify-center px-6 xl:px-16 py-16 lg:py-24 bg-gradient-to-br from-[#FB6557] to-[#FE9139]"

@@ -1,6 +1,6 @@
 export default function MapSection() {
   return ( 
-    <section className=" px:py-16 p-6 xl:px-30 " >
+    <section className=" py-16  max-w-[1230px] px-[15px] m-auto" >
 
       <div className="w-full h-70 md:h-85 overflow-hidden">
 
