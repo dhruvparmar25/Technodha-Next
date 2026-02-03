@@ -17,11 +17,13 @@ export default function CommonProcessSection({
 
      {/* Illustration */}
 <div
-  className={`p-5 flex justify-center lg:justify-end overflow-hidden 
+  className={`p-5 flex justify-center lg:justify-start overflow-hidden 
   transition-transform duration-300 ease-out
   ${!customRight ? "hover:scale-120" : ""}
-  ${reverse ? "lg:order-2" : ""}`}
+  ${reverse ? "lg:order-2" : ""}
+  ${customRight ? "career-right-align" : ""}`}
 >
+
   {customRight ? (
     customRight
   ) : (

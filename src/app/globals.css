@@ -526,3 +526,6 @@ body {
     opacity: 1;
   }
 }
+.career-right-align {
+  justify-content: end;
+}

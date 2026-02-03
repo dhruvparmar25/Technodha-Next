@@ -23,14 +23,14 @@ export default function CommonHeroSection({
         alt=""
         fill
         priority
-        className="object-cover opacity-40"
+        className="object-cover opacity-50"
       />
 
       {/* Overlay */}
       <div className="absolute inset-0" />
 
       <div className="relative px-6 xl:px-30">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-8">
 
           {/* LEFT */}
           <div>
@@ -54,7 +54,7 @@ export default function CommonHeroSection({
           {/* RIGHT */}
           {illustration && (
             <motion.div
-              className="flex justify-center lg:justify-between"
+              className="flex justify-center lg:justify-end"
               animate={{
                 scale: [0.65, 1, 0.65],
               }}

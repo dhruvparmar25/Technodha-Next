@@ -11,7 +11,7 @@ const cards = [
   {
     title: "Clear scope, clear communication",
     desc: "We ensure every project starts with a shared understanding and stays aligned throughout.",
-    pos: "top-20 left-1/2 -translate-x-1/2",
+    pos: "top-15 left-1/2 -translate-x-1/2",
     icon: Icon1,
   },
   {
