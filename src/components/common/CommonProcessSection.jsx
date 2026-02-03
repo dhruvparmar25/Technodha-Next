@@ -6,7 +6,10 @@ export default function CommonProcessSection({
   heading,
   description,
   items = [],
-  reverse = false,
+    iconSize = 24, 
+  customRight = null, 
+
+  reverse = true,
 }) {
   return (
     <section className="px-6 xl:px-30 p-6 lg:py-16">
@@ -14,17 +17,24 @@ export default function CommonProcessSection({
 
      {/* Illustration */}
 <div
-  className={`p-5 flex justify-center overflow-hidden 
-  transition-transform duration-300 ease-out hover:scale-120
+  className={`p-5 flex justify-center lg:justify-end overflow-hidden 
+  transition-transform duration-300 ease-out
+  ${!customRight ? "hover:scale-120" : ""}
   ${reverse ? "lg:order-2" : ""}`}
 >
-  <Image
-    src={illustration}
-    alt=""
-    className="xlmax-w-[460px] max-h-102.5"
-    priority
-  />
+  {customRight ? (
+    customRight
+  ) : (
+    <Image
+      src={illustration}
+      alt=""
+      className="xl:max-w-[460px] max-h-[410px]"
+      priority
+    />
+  )}
 </div>
+
+
 
 
 
@@ -47,12 +57,13 @@ export default function CommonProcessSection({
                     {item.id}
                   </span>
                 ) : item.icon ? (
-                  <Image
-                    src={item.icon}
-                    alt=""
-                    width={24}
-                    height={24}
-                  />
+                <Image
+  src={item.icon}
+  alt=""
+  width={iconSize}
+  height={iconSize}
+/>
+
                 ) : null}
 
                 <div>

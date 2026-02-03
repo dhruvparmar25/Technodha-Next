@@ -5,6 +5,8 @@ import GradientButton from "@/components/common/GradientButton";
 import { postForm } from "@/lib/api";
 import { FaRegMessage } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
+import Image from "next/image";
+import Careerlogo from "@/assets/images/sections/career/career-logo.png";
 
 const CAREER_CONTACT = [
   { icon: <FaRegMessage size={16} />, text: "careers@technodhainnovation.com" },
@@ -78,43 +80,49 @@ export default function CareerApplicationSection() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col lg:flex-row">
+    <section className=" px-6 xl:px-30 py-16 flex flex-col lg:flex-row">
       {/* Left – red-orange branding */}
-      <div
-        className="w-full lg:w-[45%] flex flex-col justify-center px-6 xl:px-16 py-16 lg:py-24"
-        style={{
-          background: "linear-gradient(135deg, #FB6557 0%, #FE9139 100%)",
-        }}
-      >
-        <p className="text-white font-semibold text-lg tracking-wide">TECHNODHA</p>
-        <h1 className="text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[42px] leading-tight mt-6">
+<div
+  className="w-full lg:w-[485px] flex flex-col justify-center px-6 xl:px-16 py-16 lg:py-24 bg-gradient-to-br from-[#FB6557] to-[#FE9139]"
+>
+
+<Image
+  src={Careerlogo}
+  alt="TECHNODHA"
+  className="w-40 object-contain"
+/>
+        <h1 className="text-white font-poppi font-semibold text-3xl sm:text-4xl lg:text-[32px] leading-tight mt-3.5 italic">
           Let&apos;s Connect — Careers & Support
         </h1>
-        <p className="text-white/95 text-base sm:text-lg mt-4 max-w-md">
+        <p className="text-white/95 text-[13px] mt-2 max-w-md">
           Questions, collaboration, or job inquiries—we&apos;re here
         </p>
-        <div className="mt-10 space-y-3">
+        <div className="mt-6 space-y-2">
           {CAREER_CONTACT.map((item) => (
-            <div key={item.text} className="flex items-center gap-3 text-white">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/20">
+            <div key={item.text} className="flex items-center gap-2 text-white">
+              <span className="flex items-center justify-center w-5.5 h-5.5 ">
                 {item.icon}
               </span>
-              <span className="text-sm sm:text-base">{item.text}</span>
+              <span className="text-[13px] ">{item.text}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Right – form */}
-      <div className="w-full lg:w-[55%] bg-white flex flex-col justify-center px-6 xl:px-16 py-16 lg:py-24">
-        <h2 className="text-[#1a1a1f] font-poppins font-semibold text-2xl sm:text-3xl leading-tight">
-          Just{" "}
-          <span className="text-[#FB6557]">email</span> your CV—we&apos;d{" "}
-          <span className="text-[#FE9139]">love</span> to hear from you
-        </h2>
+      <div className="w-full lg:w-[716px] bg-white flex flex-col justify-center px-6 xl:p-[54px] ">
+   <div className="heading-primary text-[24px]!" >
+         Just   
+          <span className="italic text-(--light-color-primary)  mx-2">email</span>.
+           your CV—we’d 
+          <span className="italic text-(--light-color-secondary) mx-2">
+            love
+          </span>
+          to hear from you
+        </div>
 
         <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid  -cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-sm font-medium text-[#1a1a1f] mb-1.5">
                 Name <span className="text-red-500">*</span>
