@@ -35,12 +35,13 @@ const Footer = () => {
             <div className=" max-w-[1230px] px-[15px] m-auto py-15 grid gap-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                 {/* Logo */}
                 <div>
+                       <Link href="/">
                     <Image
                         src={FooterLogo}
                         alt="Technodha logo"
                         className="w-25.25 h-26.75"
                         loading="lazy"
-                    />
+                    /></Link>
                 </div>
 
                 {/* Company */}

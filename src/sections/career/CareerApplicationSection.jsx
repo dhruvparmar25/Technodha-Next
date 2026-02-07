@@ -91,7 +91,7 @@ export default function CareerApplicationSection() {
   alt="TECHNODHA"
   className="w-40 object-contain"
 />
-        <h1 className="text-white font-poppi font-semibold text-3xl sm:text-4xl lg:text-[32px] leading-tight mt-3.5 italic">
+        <h1 className="text-white font-poppi font-semibold text-3xl sm:text-4xl lg:text-[32px]  mt-3.5 italic">
           Let&apos;s Connect — Careers & Support
         </h1>
         <p className="text-white/95 text-[13px] mt-2 max-w-md">
@@ -110,7 +110,7 @@ export default function CareerApplicationSection() {
       </div>
 
       {/* Right – form */}
-      <div className="w-full lg:w-[716px] bg-white flex flex-col justify-center px-6 xl:p-[54px] ">
+      <div className="w-full lg:w-[716px] bg-white flex flex-col justify-center px-2 xl:px-6 xl:p-[54px] ">
    <div className="heading-primary text-[24px]!" >
          Just   
           <span className="italic text-(--light-color-primary)  mx-2">email</span>.
